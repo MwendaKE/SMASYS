@@ -1,0 +1,135 @@
+#:import StudentScreen screens.students.students
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+<ViewStudentDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "420dp"
+	        
+    MDScrollView:
+        MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "15dp"
+	        padding: "5dp"
+	        adaptive_height: True
+      
+	        LineEdit:
+	            id: adm_no
+	            hint_text: "Adm Number *"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: fname
+	            hint_text: "Full Name *"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: dob
+	            hint_text: "Date Of Birth"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: doa
+	            hint_text: "Date Of Admission"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: kcpe
+	            hint_text: "KCPE Marks"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: form
+	            hint_text: "Class / Form *"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: role
+	            hint_text: "Student Role"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: hostel
+	            hint_text: "Hostel"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: performance
+	            hint_text: "Performance"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: discipline
+	            hint_text: "Discipline"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: subjects
+	            hint_text: "Subjects"
+	            multiline: True
+	            disabled: True
+	            
+	        LineEdit:
+	            id: guardian
+	            hint_text: "Parent"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: kcse
+	            hint_text: "KCSE Grade"
+	            disabled: True
+	               
+
+<StudentScreen>:
+    class_spinner: class_type_spinner
+    class_count: class_count_label
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        
+        MDGridLayout:
+            cols: 3
+            size_hint: 1, None
+            height: "30dp"
+            padding: "20dp", "10dp", "20dp", 0
+            
+            SectionTitle:
+                text: "Students"
+                size_hint: .40, None
+                height: "30dp"
+                
+            Spinner:
+                id: class_type_spinner
+                text: "ALL"
+                color: "#008080"
+                size_hint_x: 0.30
+                background_color: (255, 255, 255, 1)
+                values: ["ALL", "FORM 1", "FORM 2", "FORM 3", "FORM 4"]
+                on_text: root.update_students_class()
+                
+            SectionCountLabel:
+                text: "0"
+                id: class_count_label
+                size_hint: 0.30, None
+                height: "30dp"
+                halign: "center"
+        
+        
+        ### ========= ##
+        
+        MDFloatLayout:
+            MDBoxLayout:
+                id: student_container
+                orientation: "vertical"
+                size_hint: 1, .98
+                pos_hint: {"top": 1}
+            
+            MDFloatingActionButton:
+                icon: "plus"
+                pos_hint: {'right': .95, 'y': 0.15}
+                on_release: root.add_new_student(class_type_spinner.text)
+                    
+                    
+             
+        

@@ -1,0 +1,122 @@
+#:import SettingsScreen screens.topdots.settings
+
+
+<SettingsScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        SectionTitle:
+            text: "School Settings"
+            padding: "20dp"
+            height: "40dp"
+              
+        MDScrollView:  
+            MDGridLayout:
+                cols: 1
+                size_hint: 1, None
+                adaptive_height: True
+                padding: "20dp"
+                spacing: 20
+                
+                MDGridLayout:
+                	cols: 1
+                	adaptive_height: True
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 5
+                	
+                	BuddyLabel:
+                	    text: "School Code"
+                	   
+                    LineEdit:
+	                    id: scode
+	                    hint_text: "Code * "
+	                    multiline: True
+	                    required: True
+	                    
+                MDGridLayout:
+                	cols: 1
+                	adaptive_height: True
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 5
+                	
+                	BuddyLabel:
+                	    text: "School Name"
+                	   
+                    LineEdit:
+	                    id: sname
+	                    hint_text: "School Name * "
+	                    multiline: True
+	                    required: True
+	                    
+	                LineEdit:
+	                    id: sname_color
+	                    hint_text: "School Theme Color "
+	                    on_focus: if self.focus: root.open_color_picker_sname()
+	                
+	            MDGridLayout:
+                	cols: 1
+                	adaptive_height: True
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 5
+                	
+                	BuddyLabel:
+                	    text: "School Caption"
+                	    
+	                LineEdit:
+	                    id: scaption
+	                    hint_text: "School Caption"
+	                    multiline: True
+	                    
+	                LineEdit:
+	                    id: scaption_color
+	                    hint_text: "Caption Theme Color"
+	                    on_focus: if self.focus: root.open_color_picker_scaption()
+	                
+	            MDGridLayout:
+                	cols: 1
+                	adaptive_height: True
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 5
+                	
+                	BuddyLabel:
+                	    text: "Other Settings"
+                	    
+	                LineEdit:
+	                    id: saddress
+	                    hint_text: "School Address *"
+	                    multiline: True
+	                    required: True
+	            
+	                LineEdit:
+	                    id: sphone
+	                    hint_text: "School Phone Number"
+	                
+	                LineEdit:
+	                    id: smotto
+	                    hint_text: "School Motto"
+	                    multiline: True
+	                    
+	                LineEdit:
+	                    id: smission
+	                    hint_text: "School Mission"
+	                    multiline: True
+	                
+	                LineEdit:
+	                    id: svision
+	                    hint_text: "School Vision"
+	                    multiline: True
+	                
+	            MDGridLayout:
+                    cols: 3
+                    size_hint: 1, None
+                    height: "40dp"
+                
+                    MDLabel:
+                        size_hint_x: 0.8
+                    
+                    NormalButton:
+                        size_hint_x: 0.2
+                        text: "UPDATE"
+                        icon: "content-save-outline"
+                        on_release: root.update_settings()
+                        

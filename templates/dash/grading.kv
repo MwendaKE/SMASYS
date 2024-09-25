@@ -1,0 +1,1449 @@
+#:import GradingScreen screens.dash.grading
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+
+<GeneralGradingLayout>:
+    orientation: "vertical"
+    adaptive_height: True
+    padding: 0, "20dp", 0, 0
+    
+    MDGridLayout:
+	    cols: 4
+        spacing: "10dp"
+        adaptive_height: True
+                
+        # E
+                
+        GrdLineEdit:
+            hint_text: "E"
+            size_hint: 0.15, None
+            height: "20dp"
+            disabled: True
+    
+        GrdLineEdit:
+            id: ep_f
+            hint_text: "From"
+            size_hint: 0.2, None
+            height: "20dp"
+                        
+        GrdLineEdit:
+            id: ep_t
+            hint_text: "To"
+            size_hint: 0.2, None
+            height: "20dp"
+                        
+                    
+        GrdLineEdit:
+            id: ep_r
+            hint_text: "Remarks"
+            size_hint: 0.45, None
+            height: "20dp"
+                        
+        # D-
+                
+        GrdLineEdit:
+            hint_text: "D-"
+            size_hint: 0.15, None
+            height: "20dp"
+            disabled: True
+    
+        GrdLineEdit:
+            id: dm_f
+            hint_text: "From"
+            size_hint: 0.2, None
+            height: "20dp"
+                        
+        GrdLineEdit:
+            id: dm_t
+            hint_text: "To"
+            size_hint: 0.2, None
+            height: "20dp"
+            
+        GrdLineEdit:
+	        id: dm_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	        
+	    # D
+	
+	    GrdLineEdit:
+	        hint_text: "D"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: dp_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: dp_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: dp_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	        
+	    # D+
+	
+	    GrdLineEdit:
+	        hint_text: "D+"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: ds_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: ds_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: ds_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	        
+	    # C-
+	
+	    GrdLineEdit:
+	        hint_text: "C-"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: cm_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: cm_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: cm_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	    
+	    # C
+	
+	    GrdLineEdit:
+	        hint_text: "C"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: cp_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: cp_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: cp_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	        
+	    # C+
+	
+	    GrdLineEdit:
+	        hint_text: "C+"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: cs_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: cs_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: cs_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	        
+	    # B-
+	
+	    GrdLineEdit:
+	        hint_text: "B-"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: bm_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: bm_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: bm_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	        
+	    # B
+	
+	    GrdLineEdit:
+	        hint_text: "B"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: bp_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: bp_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: bp_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	        
+	    # B+
+	
+	    GrdLineEdit:
+	        hint_text: "B+"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: bs_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: bs_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: bs_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	        
+	    # A-
+	
+	    GrdLineEdit:
+	        hint_text: "A-"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: am_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: am_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: am_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+	    
+	    # A
+	
+	    GrdLineEdit:
+	        hint_text: "A"
+	        size_hint: 0.15, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: ap_f
+	        hint_text: "From"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: ap_t
+	        hint_text: "To"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        
+	    
+	    GrdLineEdit:
+	        id: ap_r
+	        hint_text: "Remarks"
+	        size_hint: 0.45, None
+	        height: "20dp"
+
+
+<MathsAndScienceGradingBoxLayout>:
+    orientation: "vertical"
+    adaptive_height: True
+    padding: 0, "20dp", 0, 0
+    
+    MDGridLayout:
+		cols: 3
+		spacing: "10dp"
+		adaptive_height: True
+		
+		# E
+		
+		GrdLineEdit:
+		    hint_text: "E"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: ep1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: ep1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		
+		# D-
+		
+		GrdLineEdit:
+		    hint_text: "D-"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: dm1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: dm1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		# D
+		
+		GrdLineEdit:
+		    hint_text: "D"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: dp1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: dp1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		
+		# D+
+		
+		GrdLineEdit:
+		    hint_text: "D+"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: ds1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: ds1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		# C-
+		
+		GrdLineEdit:
+		    hint_text: "C-"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: cm1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: cm1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		
+		# C
+		
+		GrdLineEdit:
+		    hint_text: "C"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: cp1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: cp1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		# C+
+		
+		GrdLineEdit:
+		    hint_text: "C+"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: cs1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: cs1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		
+		# B-
+		
+		GrdLineEdit:
+		    hint_text: "B-"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: bm1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: bm1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		# B
+		
+		GrdLineEdit:
+		    hint_text: "B"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: bp1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: bp1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		
+		# B+
+		
+		GrdLineEdit:
+		    hint_text: "B+"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: bs1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: bs1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		# A-
+		
+		GrdLineEdit:
+		    hint_text: "A-"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: am1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: am1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		
+		# A
+		
+		GrdLineEdit:
+		    hint_text: "A"
+		    size_hint: 0.2, None
+		    height: "20dp"
+		    disabled: True
+		
+		GrdLineEdit:
+		    id: ap1_f
+		    hint_text: "From"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+		GrdLineEdit:
+		    id: ap1_t
+		    hint_text: "To"
+		    size_hint: 0.4, None
+		    height: "20dp"
+		    
+<LanguagesGradingLayout>:
+    orientation: "vertical"
+    adaptive_height: True
+    padding: 0, "20dp", 0, 0
+    
+    MDGridLayout:
+	    cols: 3
+	    spacing: "10dp"
+	    adaptive_height: True
+	
+	    # E
+	
+	    GrdLineEdit:
+	        hint_text: "E"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: ep2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: ep2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	    
+	    # D-
+	
+	    GrdLineEdit:
+	        hint_text: "D-"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: dm2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: dm2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    # D
+	
+	    GrdLineEdit:
+	        hint_text: "D"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: dp2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: dp2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	    
+	    # D+
+	
+	    GrdLineEdit:
+	        hint_text: "D+"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: ds2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: ds2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    # C-
+	
+	    GrdLineEdit:
+	        hint_text: "C-"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: cm2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: cm2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	    
+	    # C
+	
+	    GrdLineEdit:
+	        hint_text: "C"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: cp2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: cp2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    # C+
+	
+	    GrdLineEdit:
+	        hint_text: "C+"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: cs2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: cs2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	    
+	    # B-
+	
+	    GrdLineEdit:
+	        hint_text: "B-"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: bm2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: bm2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    # B
+	
+	    GrdLineEdit:
+	        hint_text: "B"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: bp2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: bp2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	    
+	    # B+
+	
+	    GrdLineEdit:
+	        hint_text: "B+"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: bs2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: bs2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    # A-
+	
+	    GrdLineEdit:
+	        hint_text: "A-"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: am2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: am2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	    
+	    # A
+	
+	    GrdLineEdit:
+	        hint_text: "A"
+	        size_hint: 0.2, None
+	        height: "20dp"
+	        disabled: True
+	
+	    GrdLineEdit:
+	        id: ap2_f
+	        hint_text: "From"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+	    GrdLineEdit:
+	        id: ap2_t
+	        hint_text: "To"
+	        size_hint: 0.4, None
+	        height: "20dp"
+	        
+    
+<HumanitiesGradingLayout>:
+    orientation: "vertical"
+    adaptive_height: True
+    padding: 0, "20dp", 0, 0
+    
+    MDGridLayout:
+        cols: 3
+        spacing: "10dp"
+        adaptive_height: True
+    
+        # E
+    
+        GrdLineEdit:
+            hint_text: "E"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: ep3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: ep3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+        
+        # D-
+    
+        GrdLineEdit:
+            hint_text: "D-"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: dm3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: dm3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        # D
+    
+        GrdLineEdit:
+            hint_text: "D"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: dp3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: dp3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+        
+        # D+
+    
+        GrdLineEdit:
+            hint_text: "D+"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: ds3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: ds3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        # C-
+    
+        GrdLineEdit:
+            hint_text: "C-"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: cm3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: cm3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+        
+        # C
+    
+        GrdLineEdit:
+            hint_text: "C"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: cp3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: cp3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        # C+
+    
+        GrdLineEdit:
+            hint_text: "C+"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: cs3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: cs3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+        
+        # B-
+    
+        GrdLineEdit:
+            hint_text: "B-"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: bm3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: bm3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        # B
+    
+        GrdLineEdit:
+            hint_text: "B"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: bp3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: bp3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+        
+        # B+
+    
+        GrdLineEdit:
+            hint_text: "B+"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: bs3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: bs3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        # A-
+    
+        GrdLineEdit:
+            hint_text: "A-"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: am3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: am3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+        
+        # A
+    
+        GrdLineEdit:
+            hint_text: "A"
+            size_hint: 0.2, None
+            height: "20dp"
+            disabled: True
+
+        GrdLineEdit:
+            id: ap3_f
+            hint_text: "From"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+        GrdLineEdit:
+            id: ap3_t
+            hint_text: "To"
+            size_hint: 0.4, None
+            height: "20dp"
+            
+            
+<CommentsGradingLayout>:
+    orientation: "vertical"
+    adaptive_height: True
+    padding: 0, "20dp", 0, 0
+    
+    MDGridLayout:
+        cols: 2
+        spacing: "10dp"
+        adaptive_height: True
+        
+        SectionHeader:
+            text: "GRADE X"
+            size_hint: 0.3, None
+            height: "20dp" 
+            bold: True
+            
+        SectionHeader:
+            text: "0 POINTS"
+            size_hint: 0.7, None
+            height: "20dp" 
+            bold: True
+        
+        GrdLineEdit:
+            hint_text: "HEAD\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: princi_comment_x
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+        GrdLineEdit:
+            hint_text: "CLASS\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: classtr_comment_x
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+    # E
+    
+    MDGridLayout:
+        cols: 2
+        spacing: "10dp"
+        adaptive_height: True
+        
+        SectionHeader:
+            text: "GRADE E"
+            size_hint: 0.3, None
+            height: "20dp" 
+            bold: True
+            
+        SectionHeader:
+            text: "1 POINT"
+            size_hint: 0.7, None
+            height: "20dp" 
+            bold: True
+        
+        GrdLineEdit:
+            hint_text: "HEAD\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: princi_comment_e
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+        GrdLineEdit:
+            hint_text: "CLASS\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: classtr_comment_e
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+    # D
+    
+    MDGridLayout:
+        cols: 2
+        spacing: "10dp"
+        adaptive_height: True
+        
+        SectionHeader:
+            text: "GRADE D"
+            size_hint: 0.3, None
+            height: "20dp" 
+            bold: True
+            
+        SectionHeader:
+            text: "2 POINTS"
+            size_hint: 0.7, None
+            height: "20dp" 
+            bold: True
+        
+        GrdLineEdit:
+            hint_text: "HEAD\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: princi_comment_d
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+        GrdLineEdit:
+            hint_text: "CLASS\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: classtr_comment_d
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+    # C
+    
+    MDGridLayout:
+        cols: 2
+        spacing: "10dp"
+        adaptive_height: True
+        
+        SectionHeader:
+            text: "GRADE C"
+            size_hint: 0.3, None
+            height: "20dp" 
+            bold: True
+            
+        SectionHeader:
+            text: "3 POINTS"
+            size_hint: 0.7, None
+            height: "20dp" 
+            bold: True
+        
+        GrdLineEdit:
+            hint_text: "HEAD\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: princi_comment_c
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+        GrdLineEdit:
+            hint_text: "CLASS\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: classtr_comment_c
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+    # B
+    
+    MDGridLayout:
+        cols: 2
+        spacing: "10dp"
+        adaptive_height: True
+        
+        SectionHeader:
+            text: "GRADE B"
+            size_hint: 0.3, None
+            height: "20dp" 
+            bold: True
+            
+        SectionHeader:
+            text: "4 POINTS"
+            size_hint: 0.7, None
+            height: "20dp" 
+            bold: True
+        
+        GrdLineEdit:
+            hint_text: "HEAD\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: princi_comment_b
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+        GrdLineEdit:
+            hint_text: "CLASS\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: classtr_comment_b
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+    
+    # A
+    
+    MDGridLayout:
+        cols: 2
+        spacing: "10dp"
+        adaptive_height: True
+        
+        SectionHeader:
+            text: "GRADE A"
+            size_hint: 0.3, None
+            height: "20dp" 
+            bold: True
+            
+        SectionHeader:
+            text: "5 POINTS"
+            size_hint: 0.7, None
+            height: "20dp" 
+            bold: True
+        
+        GrdLineEdit:
+            hint_text: "HEAD\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: princi_comment_a
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+        GrdLineEdit:
+            hint_text: "CLASS\nTEACHER"
+            size_hint: 0.3, None
+            height: "20dp" 
+            disabled: True
+            multiline: True
+
+        GrdLineEdit:
+            id: classtr_comment_a
+            hint_text: "Comment"
+            size_hint: 0.7, None
+            height: "20dp"
+            multiline: True
+            max_text_length: 150
+            
+          
+<GradingScreen>:
+    grading_spinner: grading_spinner 
+    
+    MDScrollView:
+        MDBoxLayout:
+            orientation: "vertical"
+            adaptive_height: True
+            padding: "20dp", "20dp", "20dp", "80dp"
+            
+            MDGridLayout:
+                cols: 1
+                spacing: 5
+                adaptive_height: True
+               
+                SectionTitle:
+                    text: "Grading System"
+                    padding: 0, 0, 0, "20dp" 
+                    
+                TextDropDown:
+                    id: grading_spinner
+                    text: "GENERAL"
+                    values: ["GENERAL", "MATH & SCIENCE", "LANGUAGES", "HUMANITIES", "COMMENTS"] 
+                    on_text: root.update_grading_screen()
+                    height: "40dp"
+                    
+              
+            MDBoxLayout:
+                orientation: "vertical"
+                adaptive_height: True
+                
+                MDBoxLayout:
+                    id: all_grading_container
+                    orientation: "vertical"
+                    adaptive_height: True
+                    spacing: 10
+                
+                
+                MDGridLayout:
+                    cols: 3
+                    spacing: 5
+        
+                    MDLabel:
+                        size_hint_x: 0.50
+            
+                    NormalButton:
+                        icon: "arrow-left"
+                        text: "BACK"
+                        size_hint_x: 0.25
+                        on_release: root.manager.current = "home"
+            
+                    NormalButton:
+                        icon: "content-save-outline"
+                        text: "UPDATE"
+                        size_hint_x: 0.25
+                        on_release: root.update_grading()
+                        disabled: True if grading_spinner.text == "GENERAL" else False
+
+    
+                
+                
+                                                          

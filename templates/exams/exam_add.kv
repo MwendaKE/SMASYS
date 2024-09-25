@@ -1,0 +1,51 @@
+#:import AddStudentScreen screens.exams.exam_add
+
+<AddExamScreen>:
+    MDScrollView:
+        effect_cls: ScrollEffect
+            
+        MDBoxLayout:
+            orientation: "vertical"
+        
+            MDBoxLayout:
+                size_hint: 1, 0.05
+            
+                SectionTitle:
+                    text: "A D D   E X A M "
+                    padding: "20dp", 0, "20dp", 0
+                    size_hint: 1, 1
+                    
+	        MDBoxLayout:
+	            size_hint: 1, 0.85
+	            orientation: "vertical"
+	            
+                MDScrollView:
+            	    MDList:
+            		    id: std_add_exams_container
+            		    
+            
+                MDBoxLayout:
+                    size_hint: 1, 0.10
+                    orientation: 'vertical'
+                
+                    MDBoxLayout:
+                        size_hint: 0.5, 1
+                        spacing: 10
+                        pos_hint: {'right': .98, 'center_y': 0.5}
+                        padding: "20dp"
+                    
+                        MDRectangleFlatIconButton:
+                            icon: "arrow-left"
+                            text: "BACK"
+                            size_hint: 0.25, None
+                            on_release: root.manager.current = "students"
+                            height: "40dp"
+                        
+                        MDRectangleFlatIconButton:
+                            icon: "plus"
+                            text: "ADD"
+                            size_hint: 0.25, None
+                            height: "40dp"
+                            #on_release: root.manager.current = 
+
+    

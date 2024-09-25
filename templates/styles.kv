@@ -1,0 +1,295 @@
+#:import hex kivy.utils.get_color_from_hex
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+
+<MDScrollView>:
+    effect_cls: ScrollEffect
+            
+            
+<Spinner>:
+    size_hint: 1, None
+    height: "30dp"
+    
+    canvas.before:
+        Color:
+            rgb: hex("#008080")
+            
+        Rectangle:
+            size: self.size
+            pos: self.pos
+            
+
+<SpinnerOption>:
+    color: "#008080"
+    background_normal: ""
+    background_color: (255, 255, 255, 1)
+    halign: "left"
+    
+<TextDropDown@Spinner>:
+    color: "#FFA500"
+    size_hint: 1, None
+    height: "48dp"
+    halign: "left"
+    background_color: (255, 255, 255, 1)
+    
+<TextDropDown2@Spinner>:
+    color: "#FFA500"
+    size_hint: 1, None
+    height: "48dp"
+    halign: "left"
+    background_color: (255, 255, 255, 1)
+    
+    canvas.before:
+        Color:
+            rgb: hex("#008080")
+            
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [0, 20, 0, 20]
+            
+        Color:
+            rgb: hex("#008080")
+            
+        Line:
+            rounded_rectangle: [self.x, self.y, self.width, self.height, 0, 20, 0, 20]
+            width: 2 
+    
+<TextDropdownButton@MDRectangleFlatIconButton>:
+    icon: "chevron-down"
+    style: "elevated"
+    color: "#008080"
+    font_size: "12sp"
+    md_bg_color: (255, 255, 255, 1)
+    size_hint: 1, None
+    height: "30dp"
+    halign: "left" 
+    line_width: 1.5
+    bold: True
+    
+<BuddyButton@MDIconButton>:
+    md_bg_color: (0, 128, 128, 0.2) 
+    
+<BuddyButton2@MDIconButton>:
+    icon_size: "16sp"
+	size_hint: 1, None
+    height: "30dp"
+	valign: "center"
+	halign: "center"
+    
+    canvas.before:
+        Color:
+            rgb: hex("#008080")
+            
+        RoundedRectangle:
+            size: self.size
+            pos: self.pos
+            radius: [0, 50, 0, 50]
+      
+<ViewButton@MDIconButton>:
+    icon: "eye"
+	icon_size: "10sp"
+	size_hint: 1, None
+    height: "10dp"
+	valign: "center"
+	halign: "center"
+	              
+<MDDropdownMenu>:
+    ver_growth: "down"
+    hor_growth: "left"
+    background_color: (255, 255, 255, 1)
+    width_mult: 6
+    elevation: 1
+    position: "center"
+          
+<OneLineIconListItem>:
+    text_size: "11sp"
+    text_align: "left"
+    
+<MDDropDownItem>:
+    text_align: "left"
+    text_color: "#008080"
+           
+<MDIconButton>:
+    icon_size: "28sp"
+    theme_text_color: "Custom"
+    text_color: "#FFA500"
+    radius: 0,0,0,0
+    
+<IconLeftWidget>:
+    theme_text_color: "Primary"
+    text_color: "#FFA500"
+    
+<MDCheckbox>:
+    color_inactive: "#008080"  
+    color_active: "#FFA500"   
+    
+<CheckLabel@MDLabel>:
+    font_size: "12sp"
+    color: "#008080"
+       
+<ThreeLineListItem, TwoLineListItem, OneLineListItem>:
+    divider_color: "#008080"   
+
+<SectionTitle@MDLabel>:
+    font_size: "13sp"
+    font_style: "H5"
+    font_name: "./assets/fonts/Amperzand.ttf"
+    color: "#008080"
+    size_hint: 1, None
+    text_size: self.size
+    height: "20dp"
+    valign: "center"
+    bold: True
+    
+<SectionTitleMain@SectionTitle>:
+    height: "40dp"
+    font_style: "H1"
+    font_size: "10sp"
+    valign: "center"
+    
+<SectionHeader@MDLabel>:
+    size_hint: 1, None
+    height: "20dp"
+    font_size: "14sp"
+    font_style: "Subtitle1"
+    color: "#008080"
+    text_size: self.size
+    valign: "center"
+    bold: True
+    
+<SectionSubHeader@MDLabel>:
+    size_hint: 1, None
+    height: "20dp"
+    font_size: "8sp"
+    font_style: "Body2"
+    color: "#008080"
+    text_size: self.size
+    valign: "center"
+    bold: True
+
+<SectionCountLabel@MDLabel>:
+    size_hint: 1, None
+    height: "20dp"
+    font_size: "16sp"
+    font_style: "Subtitle1"
+    text_size: self.size
+    color: "#008080"
+    
+<LineEdit@MDTextField>:
+    mode: "rectangle"
+    size_hint: 1, None
+    height: "30dp"
+    text_color_normal: "#FFA500" 
+    hint_text_color_normal: "#008080"
+    line_color_normal: "#008080"
+    line_color_focus: "#FFA500"
+    
+<GrdLineEdit@MDTextField>:
+    #mode: "rectangle"
+    text_color_normal: "#FFA500" 
+    hint_text_color_normal: "#008080"
+    line_color_normal: "#008080"
+    line_color_focus: "#FFA500"
+    
+<TextLabel@MDLabel>:
+    font_size: "12sp"
+    font_style: "H5"
+    size_hint: 1, None
+    height: "20dp"
+    text_size: self.size
+    color: "#008080"
+    bold: True
+    
+<NormalLabel@MDLabel>:
+    font_size: "12sp"
+    size_hint: 1, None
+    height: "20dp"
+    text_size: self.size
+    color: "#008080"
+    
+<GridLabel@MDLabel>:
+    font_size: "12sp"
+    font_style: "Button"
+    size_hint: 1, None
+    height: "20dp"
+    text_size: self.size
+    color: "#008080"
+    bold: False
+    
+<GridCountLabel@GridLabel>:
+    color: "#FFA500"
+    
+<BuddyLabel@MDLabel>:
+    font_size: "10sp"
+    font_style: "Button"
+    size_hint: 1, None
+    height: "20dp"
+    text_size: self.size
+    color: "#008080"
+    bold: True  
+    
+<BuddyLabel2@BuddyLabel>:
+    font_size: "9sp" 
+
+# Data Tables
+
+<StudentDataTable>:
+    size_hint: 1, 1
+    use_pagination: True
+    elevation: 1
+    rows_num: 10
+    background_color: (255, 255, 255, 1)
+    background_color_header: (0, 128, 128, 0.3)
+    background_color_selected_cell: (255, 165, 0, 0.2)
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+ 
+<ExamDataTable>:
+    size_hint: 1, 1
+    use_pagination: True
+    elevation: 1
+    rows_num: 8
+    background_color_header: (0, 128, 128, 0.3)
+    background_color_selected_cell: (255, 165, 0, 0.2)
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+ 
+<StaffDataTable>:
+    size_hint: 1, 1
+    use_pagination: True
+    elevation: 1
+    rows_num: 10
+    background_color_header: (0, 128, 128, 0.3)
+    background_color_selected_cell: (255, 165, 0, 0.2)
+    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+ 
+ 
+# ----- PAIR BUTTON -----
+
+<PairButtonsContainer@MDBoxLayout>
+    size_hint: .50, None
+    height: '40dp'
+    pos_hint: {'right': .98, 'y': .01}
+    spacing: 10
+    
+ 
+<PairButton@MDRectangleFlatIconButton>:
+    style: "elevated"
+    halign: "center" 
+    icon_color: "#FFA500"
+    md_bg_color: (255, 255, 255, 1)
+    size_hint: .25, None
+    height: '40dp'
+    bold: True
+    
+<NormalButton@MDRectangleFlatIconButton>:
+    padding: "10dp"
+    style: "elevated"
+    halign: "center" 
+    icon_color: "#FFA500"
+    color: "#000000"
+    md_bg_color: (255, 255, 255, 1)
+    size_hint: .50, None
+    height: '40dp'
+    bold: True
+    radius: [0]
+    line_width: 1

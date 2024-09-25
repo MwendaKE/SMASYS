@@ -1,0 +1,224 @@
+#:import ExamScreen screens.exams.exams
+
+
+<ExamEditDialogContent>:
+    id: exam_edit_dialog
+    orientation: "vertical"
+    padding: "5dp"
+    spacing: "10dp"
+    size_hint: 0.9, None
+    height: "360dp"
+    
+    LineEdit:
+        id: out_of
+        hint_text: "Out Of *"
+        text: "100"
+        disabled: True
+        
+    MDGridLayout:
+        spacing: "10dp"
+        cols: 3
+      
+        LineEdit:
+	        id: eng
+	        hint_text: "ENG *"
+	        input_type: "number"
+	        required: True
+	           
+	    LineEdit:
+	        id: kis
+	        hint_text: "KIS *"
+	        input_type: "number"
+	        required: True
+	        
+	    LineEdit:
+	        id: mat
+	        hint_text: "MAT *"
+	        input_type: "number"
+	        required: True
+	        
+	    LineEdit:
+	        id: bio
+	        hint_text: "BIO"
+	        input_type: "number"
+	        
+	    LineEdit:
+	        id: phy
+	        hint_text: "PHY"
+	        input_type: "number"
+	    
+	    LineEdit:
+	        id: che
+	        hint_text: "CHE"
+	        input_type: "number"
+	    
+	    LineEdit:
+	        id: his
+	        hint_text: "HIS"
+	        input_type: "number"
+	    
+    	LineEdit:
+	        id: geo
+	        hint_text: "GEO"
+	        input_type: "number"
+	    
+	    LineEdit:
+	        id: cre
+	        hint_text: "CRE"
+	        input_type: "number"
+	    
+	    LineEdit:
+	        id: agr
+	        hint_text: "AGR"
+	        input_type: "number"
+	    
+    	LineEdit:
+	        id: com
+	        hint_text: "COM"
+	        input_type: "number"
+	    
+	    LineEdit:
+	        id: bus
+	        hint_text: "BUS"
+	        input_type: "number"
+	   
+	   
+<ExamScreen>:
+    year: year
+    term: term
+    exam: exam
+    form: form
+    gradingsys: gradingsys
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDGridLayout:
+            cols: 1
+            size_hint: 1, None
+            height: "100dp"
+	        padding: "5dp"
+	        spacing: "5dp"
+	        
+            MDGridLayout:
+	            cols: 4
+	            size_hint: 1, 0.05
+	            spacing: 10
+	            
+	            SectionTitle:
+	                text: "Exams: "
+	                size_hint: 0.20, 1
+	                
+	            SectionSubHeader:
+	                text: "USE "
+	                size_hint: 0.10, 1
+	                halign: "center"
+	                bold: False
+	                
+	            TextDropdownButton:
+	                id: gradingsys
+	                text: "FORM 1 & 2" if form.text in ["FORM 1","FORM 2"] else "FORM 3 & 4" 
+	                size_hint: 0.35, None
+	                height: "20dp"
+	                on_release: root.open_grading_menu()
+	                halign: "left"
+	                
+	            SectionSubHeader:
+	                text: "GRADING"
+	                size_hint: 0.35, 1
+	                halign: "center"
+	                bold: False
+	                
+	        MDGridLayout:
+	            cols: 4
+	            size_hint: 1, 0.05
+	            
+	            Spinner:
+	                id: year
+	                text: "2024"
+	                color: "#008080"
+	                size_hint: 0.25, None
+	                values: ["2024"]
+	                background_color: (255, 255, 255, 1)
+	                height: self.parent.height
+	                on_text: root.update_exam_type()
+	                
+	            Spinner:
+	                id: term
+	                text: "TERM 1"
+	                color: "#008080"
+	                size_hint: 0.25, None
+	                values: ["TERM 1", "TERM 2", "TERM 3"]
+	                background_color: (255, 255, 255, 1)
+	                height: self.parent.height
+	                on_text: root.update_exam_type()
+	                
+	            Spinner:
+	                id:  exam
+	                text: "OPENER"
+	                color: "#008080"
+	                size_hint: 0.25, None
+	                values: ["OPENER", "MID TERM", "END TERM"]
+	                background_color: (255, 255, 255, 1)
+	                height: self.parent.height
+	                on_text: root.update_exam_type()
+	                
+	            Spinner:
+	                id: form
+	                text: "FORM 1"
+	                color: "#008080"
+	                size_hint: 0.25, None
+	                values: ["FORM 1", "FORM 2", "FORM 3", "FORM 4"]
+	                background_color: (255, 255, 255, 1)
+	                height: self.parent.height
+	                on_text: root.update_exam_type()
+	                
+        
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint: 1, 0.85
+            
+            MDBoxLayout:
+                id: exam_container
+                orientation: "vertical"
+                size_hint: 1, 0.75
+                
+            MDBoxLayout:
+                size_hint: 1, 0.10
+                orientation: 'vertical'
+                
+                MDBoxLayout:
+                    size_hint: 1, 1
+                    spacing: 10
+                    pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                    padding: "20dp"
+                    
+                    MDRectangleFlatIconButton:
+                        id: analyze_btn
+                        icon: "chart-timeline-variant-shimmer"
+                        text: "ANALYZE"
+                        font_size: "12sp"
+                        size_hint: 0.20, None
+                        #on_release: root.print_analysis_report()
+                        height: "40dp"
+                        
+                    MDRectangleFlatIconButton:
+                        id: print_btn
+                        icon: "printer-outline"
+                        text: "PRINT"
+                        font_size: "12sp"
+                        size_hint: 0.20, None
+                        on_release: root.open_print_menu()
+                        height: "40dp"
+                        
+                    MDRectangleFlatIconButton:
+                        id: add_btn
+                        icon: "plus"
+                        text: "ADD"
+                        font_size: "12sp"
+                        size_hint: 0.20, None
+                        height: "40dp"
+                        on_release: 
+                            root.manager.current = "examlist"
+                            root.manager.get_screen("examlist").update_exam_list(year.text, term.text, exam.text, form.text)
+                            

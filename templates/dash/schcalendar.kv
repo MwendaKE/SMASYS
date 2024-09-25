@@ -1,0 +1,385 @@
+#:import CalendarScreen screens.dash.schcalendar
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+<CalendarScreen>:
+    year: year
+    
+    MDScrollView:
+        effect_cls: ScrollEffect
+            
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "20dp"
+            spacing: "20dp"
+            adaptive_height: True
+                
+            SectionTitle:
+                text: "School Calendar"
+                
+            Spinner:
+                id: year
+                text: "2024"
+                color: "#FFA500"
+                values: ["2024"]
+                background_color: (255, 255, 255, 1)
+                size_hint: 1, None
+                height: "40dp"
+                
+            # TERM 1
+                
+            SectionHeader:
+                text: "TERM 1"
+                bold: True
+                    
+            MDGridLayout:
+                cols: 3
+                spacing: "10dp"
+                adaptive_height: True
+                
+                # WEEKS
+                
+                GrdLineEdit:
+                    hint_text: "TERM WEEKS"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+    
+                GrdLineEdit:
+                    id: t1_weeks_no
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                        
+                MDLabel:
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    
+                # TERM DATES
+                   
+                GrdLineEdit:
+                    hint_text: "TERM DATES"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                        
+                GrdLineEdit:
+                    id: t1_opening_date
+                    hint_text: "Opening Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t1_opening_date_picker()
+                        
+                GrdLineEdit:
+                    id: t1_closing_date
+                    hint_text: "Closing Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t1_closing_date_picker()
+                        
+                # HALF TERM DATES
+                   
+                GrdLineEdit:
+                    hint_text: "HALF TERM"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                        
+                GrdLineEdit:
+                    id: t1_ht_sdate
+                    hint_text: "Start Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t1_ht_sdate_picker()
+                        
+                GrdLineEdit:
+                    id: t1_ht_edate
+                    hint_text: "End Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t1_ht_edate_picker()
+                           
+                # HOLIDAY DATES
+                
+                GrdLineEdit:
+                    hint_text: "HOLIDAY DATES"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                    
+                GrdLineEdit:
+                    id: t1_holiday_sdate
+                    hint_text: "Start Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t1_holiday_sdate_picker()
+                        
+                GrdLineEdit:
+                    id: t1_holiday_edate
+                    hint_text: "End Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t1_holiday_edate_picker()
+                        
+            # TERM 2
+                
+            SectionHeader:
+                text: "TERM 2"
+                #padding: 0, "50dp", 0, "50dp"
+                bold: True
+                    
+            MDGridLayout:
+                cols: 3
+                spacing: "10dp"
+                adaptive_height: True
+                
+                # WEEKS
+                
+                GrdLineEdit:
+                    hint_text: "TERM WEEKS"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+    
+                GrdLineEdit:
+                    id: t2_weeks_no
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                       
+                MDLabel:
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    
+                # TERM DATES
+                   
+                GrdLineEdit:
+                    hint_text: "TERM DATES"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                        
+                GrdLineEdit:
+                    id: t2_opening_date
+                    hint_text: "Opening Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t2_opening_date_picker()
+                   
+                GrdLineEdit:
+                    id: t2_closing_date
+                    hint_text: "Closing Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t2_closing_date_picker()
+                   
+                # HALF TERM DATES
+                   
+                GrdLineEdit:
+                    hint_text: "HALF TERM"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                        
+                GrdLineEdit:
+                    id: t2_ht_sdate
+                    hint_text: "Start Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t2_ht_sdate_picker()
+                   
+                GrdLineEdit:
+                    id: t2_ht_edate
+                    hint_text: "End Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t2_ht_edate_picker()
+                       
+                # HOLIDAY DATES
+                
+                GrdLineEdit:
+                    hint_text: "HOLIDAY DATES"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                    
+                GrdLineEdit:
+                    id: t2_holiday_sdate
+                    hint_text: "Start Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t2_holiday_sdate_picker()
+                   
+                GrdLineEdit:
+                    id: t2_holiday_edate
+                    hint_text: "End Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t2_holiday_edate_picker()
+                   
+            # TERM 3
+                
+            SectionHeader:
+                text: "TERM 3"
+                #padding: 0, "50dp", 0, "50dp"
+                bold: True
+                    
+            MDGridLayout:
+                cols: 3
+                spacing: "10dp"
+                adaptive_height: True
+                
+                # WEEKS
+                
+                GrdLineEdit:
+                    hint_text: "TERM WEEKS"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+    
+                GrdLineEdit:
+                    id: t3_weeks_no
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                        
+                MDLabel:
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    
+                # TERM DATES
+                   
+                GrdLineEdit:
+                    hint_text: "TERM DATES"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                        
+                GrdLineEdit:
+                    id: t3_opening_date
+                    hint_text: "Opening Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t3_opening_date_picker()
+             
+                GrdLineEdit:
+                    id: t3_closing_date
+                    hint_text: "Closing Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t3_closing_date_picker()
+                   
+                     
+                # HALF TERM DATES
+                    
+                GrdLineEdit:
+                    hint_text: "HALF TERM"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                        
+                GrdLineEdit:
+                    id: t3_ht_sdate
+                    hint_text: "Start Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t3_ht_sdate_picker()
+                    
+                GrdLineEdit:
+                    id: t3_ht_edate
+                    hint_text: "End Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t3_ht_edate_picker()
+                    
+                # KPSEA / KILEA
+                
+                GrdLineEdit:
+                    hint_text: "KPSEA / KILEA"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                     
+                GrdLineEdit:
+                    id: kpsea_sdate
+                    hint_text: "Start Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_kpsea_sdate_picker()
+                    
+                GrdLineEdit:
+                    id: kpsea_edate
+                    hint_text: "End Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_kpsea_edate_picker()
+                    
+                # KCSE
+                   
+                GrdLineEdit:
+                    hint_text: "KCSE"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                        
+                GrdLineEdit:
+                    id: kcse_sdate
+                    hint_text: "Start Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_kcse_sdate_picker()
+                    
+                GrdLineEdit:
+                    id: kcse_edate
+                    hint_text: "End Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_kcse_edate_picker()
+              
+                # HOLIDAY DATES
+                
+                GrdLineEdit:
+                    hint_text: "HOLIDAY DATES"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    disabled: True
+                    
+                GrdLineEdit:
+                    id: t3_holiday_sdate
+                    hint_text: "Start Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t3_holiday_sdate_picker()
+                   
+                    
+                GrdLineEdit:
+                    id: t3_holiday_edate
+                    hint_text: "End Date"
+                    size_hint: 0.3333, None
+                    height: "20dp"
+                    on_focus: if self.focus: root.open_t3_holiday_edate_picker()
+                   
+              
+            MDBoxLayout:
+                size_hint: 1, 0.10
+                orientation: 'vertical'
+                
+                MDBoxLayout:
+                    size_hint: 0.50, 1
+                    spacing: 10
+                    pos_hint: {'right': 0.98, 'y': 0.2}
+                    
+                    
+                    MDRectangleFlatIconButton:
+                        icon: "arrow-left"
+                        text: "BACK"
+                        font_size: "12sp"
+                        size_hint: 0.25, None
+                        on_release: root.manager.current = "home"
+                        height: "40dp"
+                        
+                    MDRectangleFlatIconButton:
+                        icon: "content-save-outline"
+                        text: "Save"
+                        font_size: "12sp"
+                        size_hint: 0.25, None
+                        on_release: root.update_schcalendar()
+                        height: "40dp"
+                             
+             

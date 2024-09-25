@@ -1,0 +1,341 @@
+#:import STFViewerScreen screens.topdots.stfviewer
+
+
+<STFViewDialog>:
+    orientation: "vertical"
+    size_hint: 0.95, None
+    height: "300dp"
+    
+    MDScrollView:
+        do_scroll_x: True
+        
+        MDList:
+            id: stf_container
+            
+
+<STFIconListItem@OneLineRightIconListItem>:
+    
+        
+<STFRightIconListItem>:
+    STFRightButton:
+        id: stfrightbtn
+        icon: "eye"
+        icon_size: "20sp"
+        
+        
+<STFViewerScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        SectionTitle:
+            text: "STF View"
+            padding: "20dp"
+            height: "40dp"
+              
+        MDScrollView:  
+            MDGridLayout:
+                cols: 1
+                size_hint: 1, None
+                adaptive_height: True
+                padding: "20dp"
+                spacing: 20
+                
+                MDGridLayout:
+                	cols: 1
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 20
+                	adaptive_height: True
+                	
+                	BuddyLabel:
+                	    text: "Students"
+                	    font_size: "9sp"
+                	    font_style: "H5"
+                	
+                	MDGridLayout:
+                	    cols: 1
+                	    adaptive_height: True
+                	    
+                	    BuddyLabel:
+                	        text: "Population"
+                	        font_size: "14sp"
+                	        font_style: "Button"
+                	        
+                	    MDList:   
+                            STFIconListItem:
+                	            id: schpop
+                	            IconRightWidget:
+                                    icon: "printer"
+                                    icon_size: "20sp"
+                                    disabled: True
+                            
+                	        STFIconListItem:
+                	            id: schboyspop
+                	            IconRightWidget:
+                                    icon: "printer"
+                                    icon_size: "20sp"
+                                    on_release: root.print_stf_student("BOYS")
+                        
+                            STFIconListItem:
+                	            id: schgirlspop
+                	            IconRightWidget:
+                                    icon: "printer"
+                                    icon_size: "20sp"
+                                    on_release: root.print_stf_student("GIRLS")
+                        
+                	    
+                    MDGridLayout:
+                	    cols: 1
+                	    adaptive_height: True
+                	    
+                	    BuddyLabel:
+                	        text: "Prefects"
+                	        font_size: "14sp"
+                	        font_style: "Button"
+                	        
+                        MDList: 
+                            STFIconListItem:
+                	            id: schprefno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_student("ALL_PREF")
+                              
+                            STFIconListItem:
+                	            id: schboysprefno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_student("BOYS_PREF")
+                                    
+                	        STFIconListItem:
+                	            id: schgirlsprefno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_student("GIRLS_PREF")
+                                    
+                    
+                    MDGridLayout:
+                	    cols: 1
+                	    adaptive_height: True
+                	    
+                	    BuddyLabel:
+                	        text: "Transfered"
+                	        font_size: "14sp"
+                	        font_style: "Button"
+                	        
+                        MDList:                                 
+                            STFIconListItem:
+                	            id: schtransno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_student("ALL_TRANS")
+                                    
+                            STFIconListItem:
+                	            id: schboystransno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_student("BOYS_TRANS")
+                                    
+	                        STFIconListItem:
+                	            id: schgirlstransno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_student("GIRLS_TRANS")
+                                    
+                         
+	            MDGridLayout:
+                	cols: 1
+                	adaptive_height: True
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 15
+                	   
+                	BuddyLabel:
+                	    text: "Generate Student List"
+                	    font_size: "14sp"
+                	    font_style: "Button"
+                	    
+                	MDGridLayout:
+                	    cols: 2
+                	    spacing: 10
+                	    adaptive_height: True
+                	    
+                	    TextDropDown:
+	                        id: student_class_spinner
+	                        text: "Select Class"
+	                        size_hint_x: .70
+	                        background_color: (255, 255, 255,1)
+	                        height: "38dp"
+	                    
+	                    NormalButton:
+	                        id: stdlist_genbtn
+	                        icon: "printer-outline"
+	                        text: "Print"
+	                        size_hint_x: .30
+	                        height: "30dp"
+	                        disabled: True if student_class_spinner.text == "Select Class" else False 
+	                        on_release: root.print_student_list(student_class_spinner.text)
+	                    
+	                    
+	            MDGridLayout:
+                	cols: 1
+                	adaptive_height: True
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 15
+                	   
+                	BuddyLabel:
+                	    text: "Staff"
+                	    font_size: "9sp"
+                	    font_style: "H5"
+                	    
+                	MDGridLayout:
+                	    cols: 1
+                	    adaptive_height: True
+                	    
+                	    BuddyLabel:
+                	        text: "Population"
+                	        font_size: "14sp"
+                	        font_style: "Button"
+                	        
+                	    MDList:   
+                            STFIconListItem:
+                	            id: stfpop
+                	            IconRightWidget:
+                                    icon: "printer"
+                                    icon_size: "20sp"
+                                    on_release: root.print_stf_staff("ALL")
+                        
+                	        STFIconListItem:
+                	            id: stfmalepop
+                	            IconRightWidget:
+                                    icon: "printer"
+                                    icon_size: "20sp"
+                                    disabled: True
+                                    
+                            STFIconListItem:
+                	            id: stffemalepop
+                	            IconRightWidget:
+                                    icon: "printer"
+                                    icon_size: "20sp"
+                                    disabled: True
+                        
+                    MDGridLayout:
+                	    cols: 1
+                	    adaptive_height: True
+                	    
+                	    BuddyLabel:
+                	        text: "Staff Categories"
+                	        font_size: "14sp"
+                	        font_style: "Button"
+                	        
+                	    MDList:
+                	        id: staff_class_container
+                	            
+                	MDGridLayout:
+                	    cols: 1
+                	    adaptive_height: True
+                	    
+                	    BuddyLabel:
+                	        text: "Transfered"
+                	        font_size: "14sp"
+                	        font_style: "Button"
+                	        
+                	    MDList:                                 
+                            STFIconListItem:
+                	            id: stftransno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_staff_trans("ALL_TRANS")
+                                    
+                            STFIconListItem:
+                	            id: stfmaletransno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_staff_trans("MALE_TRANS")
+                                    
+	                        STFIconListItem:
+                	            id: stffemaletransno
+                	            IconRightWidget:
+                                    icon: "eye"
+                                    icon_size: "20sp"
+                                    on_release: root.view_stf_staff_trans("FEMALE_TRANS")
+                                    
+                         
+	            MDGridLayout:
+                	cols: 1
+                	adaptive_height: True
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 15
+                	   
+                	BuddyLabel:
+                	    text: "Generate Staff List"
+                	    font_size: "14sp"
+                	    font_style: "Button"
+                	    
+                	MDGridLayout:
+                	    cols: 2
+                	    spacing: 10
+                	    adaptive_height: True
+                	    
+                	    TextDropDown:
+	                        id: staff_categ_spinner
+	                        text: "Select Category"
+	                        size_hint_x: .70
+	                        background_color: (255, 255, 255,1)
+	                        height: "38dp"
+	                    
+	                    NormalButton:
+	                        id: stflist_genbtn
+	                        icon: "printer-outline"
+	                        text: "Print"
+	                        size_hint_x: .30
+	                        height: "30dp"
+	                        disabled: True if staff_categ_spinner.text == "Select Category" else False 
+	                        on_release: root.print_stf_staff(staff_categ_spinner.text)
+	                    
+	                    
+	            MDGridLayout:
+                	cols: 1
+                	adaptive_height: True
+                	padding: 0, 0, 0, "20dp"
+                	spacing: 15
+                	   
+                	BuddyLabel:
+                	    text: "Hostels"
+                	    font_size: "9sp"
+                	    font_style: "H5"
+                	    
+                    MDGridLayout:
+                	    cols: 1
+                	    adaptive_height: True
+                	    
+                	    MDList:
+                	        id: hostels_container
+                	        
+                	        
+	            MDGridLayout:
+                    cols: 3
+                    spacing: "10dp"
+                    size_hint: 1, None
+                    height: "40dp"
+          
+                    NormalButton:
+                        size_hint_x: 0.25
+                        text: "Back"
+                        icon: "arrow-left"
+                        on_release: root.manager.current = "home"
+                
+                    MDLabel:
+                        size_hint_x: 0.25
+                        
+                    MDLabel:
+                        size_hint_x: 0.50
+                    
+                
+                
+                

@@ -1,0 +1,328 @@
+#:import RoutineScreen screens.dash.routine
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+
+<SchoolActivityListItem>:
+    divider_color: "#008080"
+    
+    IconLeftWidget:
+        icon: "timer-cog-outline"
+        
+        
+<SchoolRoutineListItem>:
+    divider_color: "#008080"
+    
+    IconLeftWidget:
+        icon: "timer-outline"  
+        
+        
+<SchoolRoutineAddDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "350dp"
+    padding: "5dp"
+	
+	MDScrollView:
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "10dp"
+	        adaptive_height: True
+	        
+	        Spinner:
+                id: term_spinner
+                text: app.root.ids.routine.ids.term.text
+                color: "#008080"
+                values: ["TERM 1","TERM 2", "TERM 3"]
+                background_color: (255, 255, 255, 1)
+                
+            Spinner:
+                id: year_spinner
+                text: app.root.ids.routine.ids.year.text
+                color: "#008080"
+                values: ["2024"]
+                background_color: (255, 255, 255, 1)
+            
+            LineEdit:
+	            id: routine
+	            hint_text: "Routine *"
+	            required: True
+	            multiline: True
+	        
+	        LineEdit:
+	            id: stime
+	            hint_text: "Start Time *"
+	            required: True
+	            on_focus: if self.focus: root.open_route_stime_picker()
+                      
+            LineEdit:
+	            id: etime
+	            hint_text: "End Time *"
+	            required: True
+	            on_focus: if self.focus: root.open_route_etime_picker()
+                      
+            Spinner:
+                id: type_spinner
+                text: "Select Week"
+                color: "#008080"
+                values: ["Week Day", "Saturday", "Sunday"]
+                background_color: (255, 255, 255, 1)
+                
+         
+<SchoolRoutineEditDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "260dp"
+    padding: "5dp"
+	
+	MDScrollView:
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "10dp"
+	        adaptive_height: True
+	        
+	        LineEdit:
+	            id: routine
+	            hint_text: "Routine *"
+	            required: True
+	            multiline: True
+	        
+	        LineEdit:
+	            id: stime
+	            hint_text: "Start Time *"
+	            required: True
+	            on_focus: if self.focus: root.open_route_stime_picker()
+                      
+            LineEdit:
+	            id: etime
+	            hint_text: "End Time *"
+	            required: True
+	            on_focus: if self.focus: root.open_route_etime_picker()
+                      
+            Spinner:
+                id: type_spinner
+                text: "Select Week"
+                color: "#008080"
+                values: ["Week Day", "Saturday", "Sunday"]
+                background_color: (255, 255, 255, 1)
+                
+              
+<SchoolActivityAddDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "370dp"
+    padding: "5dp"
+	
+	MDScrollView:
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "10dp"
+	        adaptive_height: True
+	        
+	        Spinner:
+                id: term_spinner
+                text: app.root.ids.routine.ids.term.text
+                color: "#008080"
+                values: ["TERM 1","TERM 2", "TERM 3"]
+                background_color: (255, 255, 255, 1)
+                
+            Spinner:
+                id: year_spinner
+                text: app.root.ids.routine.ids.year.text
+                color: "#008080"
+                values: ["2024"]
+                background_color: (255, 255, 255, 1)
+            
+            LineEdit:
+	            id: activity
+	            hint_text: "Activity"
+	            required: True
+	            multiline: True
+	        
+	        LineEdit:
+	            id: sdate
+	            hint_text: "Activity Start Date"
+	            required: True
+	            on_focus: if self.focus: root.open_act_sdate_picker()
+                      
+            LineEdit:
+	            id: edate
+	            hint_text: "Activity End Date"
+	            on_focus: if self.focus: root.open_act_edate_picker()
+                      
+            LineEdit:
+	            id: week
+	            hint_text: "Week"
+	            required: True
+	            input_type: "number"
+           
+
+<SchoolActivityEditDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "330dp"
+    padding: "5dp"
+	
+	MDScrollView:
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "10dp"
+	        adaptive_height: True
+	        
+	        LineEdit:
+	            id: activity
+	            hint_text: "Activity"
+	            required: True
+	            multiline: True
+	        
+	        LineEdit:
+	            id: sdate
+	            hint_text: "Activity Start Date"
+	            required: True
+	            on_focus: if self.focus: root.open_act_sdate_picker()
+                      
+            LineEdit:
+	            id: edate
+	            hint_text: "Activity End Date"
+	            on_focus: if self.focus: root.open_act_edate_picker()
+                      
+            LineEdit:
+	            id: week
+	            hint_text: "Week"
+	            required: True
+	            input_type: "number"
+	            
+	        Spinner:
+                id: att_spinner
+                color: "#008080"
+                values: ["Attended", "Not Attended"]
+                background_color: (255, 255, 255, 1)
+	            	
+
+<RoutineScreen>:
+    term: term
+    year: year
+    
+    MDScrollView:
+        effect_cls: ScrollEffect
+            
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "20dp"
+            spacing: "20dp"
+            adaptive_height: True
+                
+            SectionTitle:
+                text: "Routine / Activities"
+                
+            MDGridLayout:
+                cols: 2
+                size_hint: 1, None
+                height: "40dp"
+                
+                Spinner:
+                    id: term
+                    text: "TERM 1"
+                    color: "#FFA500"
+                    values: ["TERM 1", "TERM 2", "TERM 3"]
+                    background_color: (255, 255, 255, 1)
+                    size_hint: 0.5, None
+                    height: self.parent.height
+                    on_text: root.on_pre_enter()
+             
+                Spinner:
+                    id: year
+                    text: "2024"
+                    color: "#FFA500"
+                    values: ["2024"]
+                    background_color: (255, 255, 255, 1)
+                    size_hint: 0.5, None
+                    height: self.parent.height
+                    
+            # ACTIVITIES
+                
+            SectionHeader:
+                text: "TERM ACTIVITIES"
+                #padding: 0, "50dp", 0, "50dp"
+                bold: True
+                    
+            MDList:
+                id: acts_container
+                    
+            MDGridLayout:
+                cols: 3
+                spacing: "10dp"
+                size_hint: 1, None
+                height: "40dp"
+                
+                NormalButton:
+                    text: "Add Activity"
+                    icon: "plus"
+                    on_release: root.add_term_activity()
+                
+                NormalButton:
+                    text: "Print Activities"
+                    icon: "printer-outline"
+                    on_release: root.print_term_activities()
+                
+                MDLabel:
+                    
+                
+            # SCHOOL ROUTINE
+                
+            SectionHeader:
+                text: "SCHOOL ROUTINE"
+                #padding: 0, "50dp", 0, "50dp"
+                bold: True
+                
+            SectionSubHeader:
+                text: "WEEK DAYS"
+                #padding: 0, "50dp", 0, "50dp"
+                bold: True
+               
+            MDList:
+                id: weekday_container      
+            
+            
+            SectionSubHeader:
+                text: "WEEKENDS"
+                #padding: 0, "50dp", 0, "50dp"
+                bold: True
+               
+            SectionSubHeader:
+                text: "Saturday"
+                #padding: 0, "50dp", 0, "50dp"
+                bold: True
+                  
+            MDList:
+                id: sat_container
+                
+               
+            SectionSubHeader:
+                text: "Sunday"
+                #padding: 0, "50dp", 0, "50dp"
+                bold: True
+                  
+            MDList:
+                id: sun_container
+                
+                
+            MDGridLayout: 
+                cols: 3
+                spacing: "10dp"
+                size_hint: 1, None
+                height: "40dp"
+                
+                NormalButton:
+                    text: "Add Routine"
+                    icon: "plus"
+                    on_release: root.add_school_routine()
+                
+                NormalButton:
+                    text: "Print Routines"
+                    icon: "printer-outline"
+                    on_release: root.print_school_routines()
+                
+                MDLabel:
+                
+                
+                

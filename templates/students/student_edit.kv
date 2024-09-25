@@ -1,0 +1,372 @@
+#:import EditStudentScreen screens.students.student_edit
+
+<SubjectEditDialogContent>:
+    id: subject_dialog
+    cols: 3
+    padding: "10dp"
+    spacing: "10dp"
+    size_hint: 0.8, None
+    height: "300dp"
+    
+    MDBoxLayout:
+	    MDCheckbox:
+	        id: eng
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "ENG")
+	         
+	    CheckLabel:
+	        text: "ENG"
+	           
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: kis             
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "KIS")
+	                   
+	    CheckLabel:
+	        text: "KIS"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: mat           
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "MAT")
+	                    
+	    CheckLabel:
+	        text: "MAT"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: bio
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "BIO")
+	                  
+	    CheckLabel:
+	        text: "BIO"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: phy
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "PHY")
+	           
+	    CheckLabel:
+	        text: "PHY"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: che
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "CHE")
+	                     
+	    CheckLabel:
+	        text: "CHE"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: his
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "HIS")
+	                    
+	    CheckLabel:
+	        text: "HIS"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: geo
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "GEO")
+	               
+	    CheckLabel:
+	        text: "GEO"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: cre
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "CRE")
+	                  
+	    CheckLabel:
+	        text: "CRE"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: ire
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "IRE")
+	                   
+	    CheckLabel:
+	        text: "IRE"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id:hre
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "HRE")
+	                     
+	    CheckLabel:
+	        text: "HRE"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: agr
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "AGR")
+	                   
+	    CheckLabel:
+	        text: "AGR"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: com
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "COM")
+	                    
+	    CheckLabel:
+	        text: "COM"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: bus
+	        on_active: app.root.ids.studentedit.subject_checkbox_clicked(self, self.active, "BUS")
+	                    
+	    CheckLabel:
+	        text: "BUS"
+	        
+	        
+<HostelAddEditDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "50dp"
+    padding: "5dp"
+	
+	MDBoxLayout:
+	    LineEdit:
+	        id: hostelname
+	        hint_text: "Hostel Name *"
+	        max_text_length: 20
+	        required: True
+	        
+	        		
+<EditStudentScreen>:
+    adm_no: adm_no
+    full_name: fname
+    gender: gender
+    date_of_birth: dob
+    date_of_admission: doa
+    kcpe: kcpe
+    form: form
+    hostel: hostel
+    performance: performance
+    discipline: discipline
+    subjects: subjects
+    guardian: guardian
+    kcse: kcse
+    role: role
+    
+    graduated: grad
+    graduated_year: grad_year
+    transfered: trans
+    transfered_date: trans_date
+    
+    MDScrollView:
+        effect_cls: ScrollEffect
+        
+        MDBoxLayout:
+            orientation: "vertical"
+            adaptive_height: True
+            padding: "20dp"
+            spacing: "20dp"
+            
+            SectionTitle:
+                text: "Edit Student"
+                
+	        MDGridLayout:
+	            cols: 1
+	            spacing: "10dp"
+	            padding: 0,0,0, "50dp"
+	            adaptive_height: True
+      
+	            LineEdit:
+	                id: adm_no
+	                hint_text: "Adm Number *"
+	                input_type: "number"
+	                required: True
+	            
+	            LineEdit:
+	                id: fname
+	                hint_text: "Full Name *"
+	                required: True
+	            
+	            ###########
+	            
+	            MDGridLayout:
+	                cols: 1
+	                adaptive_height: True
+	                spacing: 5
+	                
+	                BuddyLabel2:
+	                    text: "Class / Form:"
+	                    
+	                TextDropdownButton:
+	                    id: form
+	                    text: "Select Class"
+	                    on_release: root.open_class_menu()
+	                    
+	            MDGridLayout:
+	                cols: 1
+	                adaptive_height: True
+	                spacing: 5
+	                
+	                BuddyLabel2:
+	                    text: "Gender:"
+	                    
+	                TextDropdownButton:
+	                    id: gender
+	                    text: "Select Gender"
+	                    on_release: root.open_gender_menu()
+	            
+	            ############
+	            
+	            LineEdit:
+	                id: dob
+	                hint_text: "Date Of Birth"
+	                on_focus: if self.focus: root.open_dob_date_picker()
+	            
+	            LineEdit:
+	                id: doa
+	                hint_text: "Date Of Admission"
+	                on_focus: if self.focus: root.open_doa_date_picker()
+	            
+	            LineEdit:
+	                id: kcpe
+	                hint_text: "KCPE Marks"
+	                input_type: "number"
+	            
+	            ########
+	            
+	            MDGridLayout:
+	                cols: 1
+	                adaptive_height: True
+	                spacing: 5
+	                
+	                BuddyLabel2:
+	                    text: "Student Role:"
+	                
+	                TextDropdownButton:
+	                    id: role
+	                    text: "STUDENT (NO ROLE)"
+	                    on_release: root.open_student_role_menu()
+	               
+	            MDGridLayout:
+	                cols: 1
+	                adaptive_height: True
+	                spacing: 5
+	                
+	                BuddyLabel2:
+	                    text: "HOSTEL / DORMITORY:"
+	                 
+	                MDGridLayout:
+	                    cols: 2
+	                    adaptive_height: True
+	                    spacing: 10  
+	                 
+	                    TextDropdownButton:
+	                        id: hostel
+	                        text:  "Select Hostel"
+	                        size_hint_x: 0.85
+	                        on_release: root.open_hostel_menu()
+	                    
+	                    BuddyButton2:
+	                        id: add_hostel_btn
+	                        icon: "plus"
+	                        size_hint_x: 0.15
+	                        on_release: root.add_hostels()
+	                    
+	            ########
+	            
+	            LineEdit:
+	                id: performance
+	                hint_text: "Performance"
+	                disabled: True
+	            
+	            LineEdit:
+	                id: discipline
+	                hint_text: "Discipline"
+	                disabled: True
+	            
+	            LineEdit:
+	                id: subjects
+	                hint_text: "Subjects"
+	                multiline: True
+	                on_focus: if self.focus: root.open_subjects_picker()
+	            
+	            LineEdit:
+	                id: guardian
+	                hint_text: "Parent's Phone Number"
+	     
+	            ######
+	            
+	            MDGridLayout:
+	                cols: 1
+	                adaptive_height: True
+	                spacing: 5
+	                
+	                #############
+	                
+	                BuddyLabel2:
+	                    text: "TRANSFERED?"
+	                    
+	                TextDropdownButton:
+	                    id: trans
+	                    text: "NOT TRANSFERED"
+	                    on_release: root.open_trans_menu()
+	                
+	                BuddyLabel2:
+	                    text: "TRANSFER DATE:"
+	                    
+	                LineEdit:
+	                    id: trans_date
+	                    on_focus: if self.focus: root.open_trans_date_picker()
+	       
+	            ######
+	            
+	            MDGridLayout:
+	                cols: 1
+	                adaptive_height: True
+	                spacing: 5
+	                
+	                #############
+	                
+	                BuddyLabel2:
+	                    text: "GRADUATED?"
+	                    
+	                TextDropdownButton:
+	                    id: grad
+	                    text: "NOT GRADUATED"
+	                    on_release: root.open_grad_menu()
+	                
+	                BuddyLabel2:
+	                    text: "GRADUATION YEAR:"
+	                    
+	                TextDropdownButton:
+	                    id: grad_year
+	                    text: "2023"
+	                
+	            ##########
+	                
+	            LineEdit:
+	                id: kcse
+	                hint_text: "KCSE Grade"
+	            
+	            
+	            MDGridLayout:
+                    cols: 3
+                    spacing: 5
+                    height: "50dp"
+                    
+                    MDLabel:
+                        size_hint_x: 0.50
+                         
+                    NormalButton:
+                        icon: "cancel"
+                        text: "CANCEL"
+                        size_hint_x: 0.25
+                        on_release: root.manager.current = "students"
+                        
+                    NormalButton:
+                        icon: "content-save-outline"
+                        text: "SAVE"
+                        size_hint_x: 0.25
+                        on_release: root.save_student()
+
+	          
+            
+	            

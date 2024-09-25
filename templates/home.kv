@@ -1,0 +1,557 @@
+#:import HomeScreen screens.home
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+<ViewStudentQueryNameDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "300dp"
+    padding: "2dp"
+	        
+    MDScrollView:
+        MDList:
+            padding: "2dp"
+            id: stds_container
+             
+	            
+<SearchQueryDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "200dp"
+    spacing: "15dp"
+	padding: "5dp"
+	
+	MDBoxLayout:
+	    orientation: "vertical"
+	    spacing: "10dp"
+	    
+	    TextLabel:
+	        text: "SEARCH FROM:"
+	        font_size: "10sp"
+	        
+	    Spinner:
+            id: query_type_spinner
+            text: "STUDENTS"
+            color: "#008080"
+            values: ["STUDENTS","STAFF"]
+            background_color: (255, 255, 255, 1)
+            
+        TextLabel:
+            text: "SEARCH BY:"
+            font_size: "10sp"
+            
+        Spinner:
+            id: query_by_spinner
+            text: "ID"
+            color: "#008080"
+            values: ["ID", "NAME"]
+            background_color: (255, 255, 255, 1)
+             
+	LineEdit:
+	    id: search_query
+	    hint_text: "SEARCH"
+	    required: True
+	   
+	   
+<ViewStudentQueryDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "420dp"
+	        
+    MDScrollView:
+        MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "15dp"
+	        padding: "5dp"
+	        adaptive_height: True
+      
+	        LineEdit:
+	            id: adm_no
+	            hint_text: "Adm Number"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: fname
+	            hint_text: "Full Name"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: form
+	            hint_text: "Class / Form"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: dob
+	            hint_text: "Date Of Birth"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: doa
+	            hint_text: "Date Of Admission"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: guardian
+	            hint_text: "Parent's Phone Nunber"
+	            disabled: True
+	        
+	        LineEdit:
+	            id: gender
+	            hint_text: "Gender"
+	            disabled: True
+	      
+	        LineEdit:
+	            id: kcpe
+	            hint_text: "KCPE Marks"
+	            disabled: True
+	            
+	        ## ------- ##
+	        
+	        LineEdit:
+	            id: role
+	            hint_text: "Role"
+	            disabled: True
+	         
+	        LineEdit:
+	            id: mduty
+	            hint_text: "Assigned Duty"
+	            disabled: True
+	         
+	        ## -------- ##
+	        
+	        LineEdit:
+	            id: hostel
+	            hint_text: "Hostel"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: subjects
+	            hint_text: "Subjects"
+	            multiline: True
+	            disabled: True
+	        
+	        ## --------- ##
+	        
+	        LineEdit:
+	            id: performance
+	            hint_text: "Performance"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: discipline
+	            hint_text: "Discipline"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: trans
+	            hint_text: "Transfered"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: trans_date
+	            hint_text: "Transfered Date"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: grad
+	            hint_text: "Graduated"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: grad_year
+	            hint_text: "Graduation Year"
+	            disabled: True
+	           
+	        ## ---------- ##
+	        
+	        LineEdit:
+	            id: kcse
+	            hint_text: "KCSE Grade"
+	            disabled: True
+	           
+<ViewStaffQueryDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "420dp"
+	        
+    MDScrollView:
+        MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "15dp"
+	        padding: "5dp"
+	        adaptive_height: True
+     
+	        LineEdit:
+	            id: staffid
+	            hint_text: "Staff Id"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: fname
+	            hint_text: "Full Name"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: gender
+	            hint_text: "Gender"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: ethnicity
+	            hint_text: "Ethnicity"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: loe
+	            hint_text: "Education Level"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: class_
+	            hint_text: "Staff Class"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: role
+	            hint_text: "Staff Role"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: phone
+	            hint_text: "Phone Number"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: combination
+	            hint_text: "Subject Combination"
+	            multiline: True
+	            disabled: True
+	            
+	        LineEdit:
+	            id: doe
+	            hint_text: "Day Of Employment"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: trans
+	            hint_text: "Transfered"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: trans_date
+	            hint_text: "Transfered Date"
+	            disabled: True
+	            
+	            
+	        
+<HomeScreen>:
+    MDScrollView:
+        effect_cls: ScrollEffect
+            
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "20dp", "20dp", "20dp", "10dp"
+            spacing: "30dp"
+            adaptive_height: True
+                
+            SectionTitle:
+                text: "General"
+                    
+            MDGridLayout:
+                cols: 2
+                spacing: "10dp"
+                adaptive_height: True
+                
+                ##COUNTER##
+                
+                # CLASSES COUNT 
+                    
+                MDCard:
+                    padding: 4
+                    size_hint: .5, None
+                    height: "80dp"
+                    style: "outlined"
+                    line_color: '#008080'
+                    radius: 0,10,0,10
+                        
+                    MDBoxLayout:
+                        padding: "10dp"
+                        spacing: 20
+                            
+                        MDIconButton:
+                            icon: "view-compact"
+                            icon_size: "32sp"
+                            size_hint_x: .35
+                                
+                                    
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            size_hint_x: .65
+                                
+                            MDLabel:
+                                id: student_count
+                                text: "4"
+                                color: "#008080"
+                                font_size: "36sp"
+                                padding: 0, "10dp", 0, "20dp"
+                                bold: True
+                                
+                            MDLabel:
+                                text: "Classes"
+                                font_style: "Button" 
+                                font_size: "14sp"
+                                    
+                        
+                # STUDENT COUNT 
+                    
+                MDCard:
+                    padding: 4
+                    size_hint: .5, None
+                    height: "80dp"
+                    style: "outlined"
+                    line_color: '#008080'
+                    radius: 0,10,0,10
+                        
+                    MDBoxLayout:
+                        padding: "10dp"
+                        spacing: 20
+                            
+                        MDIconButton:
+                            icon: "school"
+                            icon_size: "32sp"
+                            size_hint_x: .35
+                                
+                                    
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            size_hint_x: .65
+                                
+                            MDLabel:
+                                id: student_count
+                                text: "4"
+                                color: "#008080"
+                                font_size: "36sp"
+                                padding: 0, "10dp", 0, "20dp"
+                                bold: True
+                                
+                            MDLabel:
+                                text: "Students"
+                                font_style: "Button" 
+                                font_size: "14sp" 
+                                    
+                        
+                # TEACHER COUNT 
+                    
+                MDCard:
+                    padding: 4
+                    size_hint: .5, None
+                    height: "80dp"
+                    style: "outlined"
+                    line_color: '#008080'
+                    radius: 0,10,0,10
+                        
+                    MDBoxLayout:
+                        padding: "10dp"
+                        spacing: 20
+                            
+                        MDIconButton:
+                            icon: "human-male-female"
+                            icon_size: "32sp"
+                            size_hint_x: .35
+                                
+                                    
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            size_hint_x: .65
+                                
+                            MDLabel:
+                                id: teacher_count
+                                text: "4"
+                                color: "#008080"
+                                font_size: "36sp"
+                                padding: 0, "10dp", 0, "20dp"
+                                bold: True
+                                
+                            MDLabel:
+                                text: "Teachers"
+                                font_style: "Button" 
+                                font_size: "14sp"
+                                
+                                
+                # ADMINS COUNT 
+                    
+                MDCard:
+                    padding: 4
+                    size_hint: .5, None
+                    height: "80dp"
+                    style: "outlined"
+                    line_color: '#008080'
+                    radius: 0,10,0,10
+                        
+                    MDBoxLayout:
+                        padding: "10dp"
+                        spacing: 20
+                            
+                        MDIconButton:
+                            icon: "account-tie"
+                            icon_size: "32sp"
+                            size_hint_x: .35
+                                
+                                    
+                        MDBoxLayout:
+                            orientation: "vertical"
+                            size_hint_x: .65
+                                
+                            MDLabel:
+                                id: admin_count
+                                text: "4"
+                                color: "#008080"
+                                font_size: "36sp"
+                                padding: 0, "10dp", 0, "20dp"
+                                bold: True
+                                
+                            MDLabel:
+                                text: "Admins"
+                                font_style: "Button" 
+                                font_size: "14sp"
+                                 
+                        
+                  
+            ##STATISTICS GRAPH##
+            
+            SectionTitle:
+                text: "Statistics"
+            
+            MDBoxLayout:
+                orientation: "vertical"
+                size_hint: 1, None
+                height: "300dp"
+            
+                Image:
+                    id: home_graph
+                    size_hint: self.parent.size_hint
+                    height: self.parent.height
+                    source: ""
+                    allow_stretch: True
+                    keep_ratio: True
+                
+                
+            ##MAIN MENU##
+                
+            SectionTitle:
+                text: "Menu"
+            
+            MDGridLayout:
+                cols: 3
+                spacing: "10dp"
+                adaptive_height: True
+            
+                MDFlatButton:
+                    size_hint: self.parent.size_hint
+                    height: "110dp"
+                    on_release: root.open_routine_screen()
+                
+                    MDBoxLayout:
+                        orientation: "vertical"
+                    
+                        MDIconButton:
+                            icon: "clipboard-list-outline"
+                            md_bg_color: "#008080"
+                            pos_hint: {"center_x": 0.5}
+                        
+                        MDLabel:
+                            text: "Routine"
+                            halign: 'center'
+                            valign: 'bottom'
+            
+                MDFlatButton:
+                    size_hint: self.parent.size_hint
+                    height: "110dp"
+                    on_release: root.open_calendar_screen()
+                
+                    MDBoxLayout:
+                        orientation: "vertical"
+                    
+                        MDIconButton:
+                            icon: "calendar-clock-outline"
+                            md_bg_color: "#008080"
+                            pos_hint: {"center_x": 0.5}
+                        
+                        MDLabel:
+                            text: "School Calendar"
+                            halign: 'center'
+                            valign: 'bottom'
+                 
+                MDFlatButton:
+                    size_hint: self.parent.size_hint
+                    height: "110dp"
+                    on_release: root.open_library_screen()
+                    
+                    MDBoxLayout:
+                        orientation: "vertical"
+                    
+                        MDIconButton:
+                            icon: "bookshelf"
+                            md_bg_color: "#008080"
+                            pos_hint: {"center_x": 0.5}
+                         
+                        MDLabel:
+                            text: "Library"
+                            halign: 'center'
+                            valign: 'bottom'
+                            text_color: "#FF0000"
+            
+                MDFlatButton:
+                    size_hint: self.parent.size_hint
+                    height: "110dp"
+                    on_release: root.open_duties_screen()
+                
+                    MDBoxLayout:
+                        orientation: "vertical"
+                    
+                        MDIconButton:
+                            icon: "list-box-outline"
+                            md_bg_color: "#008080"
+                            pos_hint: {"center_x": 0.5}
+                        
+                        MDLabel:
+                            text: "Duty Rota"
+                            halign: 'center'
+                            valign: 'bottom'
+            
+                MDFlatButton:
+                    size_hint: self.parent.size_hint
+                    height: "110dp"
+                    on_release: root.open_subjects_screen()
+                
+                    MDBoxLayout:
+                        orientation: "vertical"
+                    
+                        MDIconButton:
+                            icon: "book-open-page-variant-outline"
+                            md_bg_color: "#008080"
+                            pos_hint: {"center_x": 0.5}
+                        
+                        MDLabel:
+                            text: "Subject Allocation"
+                            halign: 'center'
+                            valign: 'bottom'
+                   
+                MDFlatButton:
+                    size_hint: self.parent.size_hint
+                    height: "110dp"
+                    on_release: root.open_grading_screen()
+                  
+                    MDBoxLayout:
+                        orientation: "vertical"
+                    
+                        MDIconButton:
+                            icon: "check-decagram-outline"
+                            md_bg_color: "#008080"
+                            pos_hint: {"center_x": 0.5}
+                        
+                        MDLabel:
+                            text: "Grading"
+                            halign: 'center'
+                            valign: 'bottom'
+                        
+        

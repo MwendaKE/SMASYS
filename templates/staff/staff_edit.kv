@@ -1,0 +1,243 @@
+#:import EditStaffScreen screens.staff.staff_edit
+
+<SubjectCombinationEditDialogContent>:
+    id: subject_dialog
+    cols: 3
+    padding: "10dp"
+    spacing: "10dp"
+    size_hint: 0.8, None
+    height: "300dp"
+    
+    MDBoxLayout:
+	    MDCheckbox:
+	        id: eng
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "ENG")
+	         
+	    CheckLabel:
+	        text: "ENG"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: lit
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "LIT")
+	         
+	    CheckLabel:
+	        text: "LIT"
+	           
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: kis             
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "KIS")
+	                   
+	    CheckLabel:
+	        text: "KIS"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: mat           
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "MAT")
+	                    
+	    CheckLabel:
+	        text: "MAT"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: bio
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "BIO")
+	                  
+	    CheckLabel:
+	        text: "BIO"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: phy
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "PHY")
+	           
+	    CheckLabel:
+	        text: "PHY"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: che
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "CHE")
+	                     
+	    CheckLabel:
+	        text: "CHE"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: his
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "HIS")
+	                    
+	    CheckLabel:
+	        text: "HIS"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: geo
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "GEO")
+	               
+	    CheckLabel:
+	        text: "GEO"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: cre
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "CRE")
+	                  
+	    CheckLabel:
+	        text: "CRE"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: agr
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "AGR")
+	                   
+	    CheckLabel:
+	        text: "AGR"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: com
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "COM")
+	                    
+	    CheckLabel:
+	        text: "COM"
+	        
+	MDBoxLayout:
+	    MDCheckbox:
+	        id: bus
+	        on_active: app.root.ids.staffedit.subject_checkbox_clicked(self, self.active, "BUS")
+	                    
+	    CheckLabel:
+	        text: "BUS"
+	        
+	        
+<EditStaffScreen>:
+    oldid: oldid_label
+    id_no: id_no # National ID number
+    full_name: fname
+    gender: gender
+    ethnicity: ethnicity
+    loe: loe # Level of education
+    role: role # Staff role, teacher, other worker, etc
+    class_: class_
+    phone: phone 
+    combination: combination # Subject combination
+    doe: doe # Date of employment
+    transfered: trans # Still a staff? -> boolean
+    transfered_date: trans_date
+    
+    MDScrollView:
+        effect_cls: ScrollEffect
+        
+        MDBoxLayout:
+            orientation: "vertical"
+            adaptive_height: True
+            padding: "20dp"
+            spacing: "20dp"
+            
+            MDGridLayout:
+                cols: 2
+                height: "40dp"
+                padding: 0,0,0, "20dp" 
+                
+                SectionTitle:
+                    text: "Edit Staff"
+                    
+                MDLabel:
+                    id: oldid_label
+                    color: (0,0,0,0.1)
+                    halign: "right"
+                
+	        MDGridLayout:
+	            cols: 1
+	            spacing: "10dp"
+	            padding: 0,0,0, "50dp"
+	            adaptive_height: True
+      
+	            LineEdit:
+	                id: id_no
+	                hint_text: "Staff Id*"
+	                required: True
+	            
+	            LineEdit:
+	                id: fname
+	                hint_text: "Full Name *"
+	                required: True
+	            
+	            LineEdit:
+	                id: gender
+	                hint_text: "Gender *"
+	                on_focus: if self.focus: root.open_gender_menu()
+	                required: True
+	            
+	            LineEdit:
+	                id: ethnicity
+	                hint_text: "Ethnicity"
+	                on_focus: if self.focus: root.open_ethnicity_menu()
+	            
+	            LineEdit:
+	                id: loe 
+	                hint_text: "Education Level"
+	                on_focus: if self.focus: root.open_loe_menu()
+	                
+	            LineEdit:
+	                id: role
+	                hint_text: "Staff Role"
+	                on_focus: if self.focus: root.open_role_menu()
+	                
+	            LineEdit:
+	                id: class_
+	                hint_text: "Staff Class *"
+	                on_focus: if self.focus: root.open_class_menu()
+	                required: True
+	                
+	            LineEdit:
+	                id: phone 
+	                hint_text: "Phone Number"
+	                input_type: "number"
+	                
+	            LineEdit:
+	                id: combination
+	                hint_text: "Subject Combination"
+	                on_focus: if self.focus: root.open_subject_dialog()
+	                multiline: True
+	                
+	            LineEdit:
+	                id: doe
+	                hint_text: "Date of Employment"
+	                on_focus: if self.focus: root.open_doe_date_picker()
+	            
+	            LineEdit:
+	                id: trans
+	                hint_text: "Transfered"
+	                on_focus: if self.focus: root.open_transfered_menu()
+	                
+	            LineEdit:
+	                id: trans_date
+	                hint_text: "Transfered Date"
+	                on_focus: if self.focus: root.open_trans_date_picker()
+	                
+	            MDGridLayout:
+                    cols: 3
+                    spacing: 5
+                    height: "50dp"
+                    
+                    MDLabel:
+                        size_hint_x: 0.50
+                         
+                    NormalButton:
+                        icon: "cancel"
+                        text: "CANCEL"
+                        size_hint_x: 0.25
+                        on_release: root.manager.current = "staff"
+                        
+                    NormalButton:
+                        icon: "plus"
+                        text: "UPDATE"
+                        size_hint_x: 0.25
+                        on_release: root.update_staff()
+
+	       
+	            

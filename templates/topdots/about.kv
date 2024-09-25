@@ -1,0 +1,66 @@
+#:import SmasysAboutScreen screens.topdots.about
+
+
+<SmasysAboutScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        SectionTitle:
+            text: "About Smasys"
+            padding: "20dp"
+            height: "40dp"
+              
+        MDScrollView:  
+            MDGridLayout:
+                cols: 1
+                adaptive_height: True
+                padding: "20dp"
+                pos_hint: {"top": 1}
+                spacing: 20
+                
+                FitImage:
+                    halign: "center"
+                    source: "./assets/imgs/logoabout.jpg"
+                    size_hint: None, None
+                    size: "350dp", "140dp"
+                    
+                NormalLabel:
+                    text: root.desc
+                    halign: "justify"
+                    font_size: "18sp"
+                    adaptive_height: True
+                    
+                SectionSubHeader:
+                    text: "Developer Details"
+                    font_style: "Button"
+                    
+                GrdLineEdit:
+                    icon_left: "account-edit"
+                    text: root.git
+                    hint_text: "Developer GitHub"
+                    disabled: True
+                    
+                GrdLineEdit:
+                    icon_left: "email"
+                    text: root.email
+                    hint_text: "Email"
+                    disabled: True
+                 
+                GrdLineEdit:
+                    icon_left: "phone"
+                    text: root.phone
+                    hint_text: "Phone Number"
+                    disabled: True
+                    
+                GrdLineEdit:
+                    icon_left: "office-building"
+                    text: root.company
+                    hint_text: "Company Name"
+                    disabled: True
+                    
+                GrdLineEdit:
+                    icon_left: "web"
+                    text: root.website
+                    hint_text: "Website"
+                    disabled: True
+               

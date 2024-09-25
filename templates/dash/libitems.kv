@@ -1,0 +1,174 @@
+#:import LibraryItemsScreen screens.dash.libitems
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+
+<LibraryItemClassLabel>:
+    size_hint: 1, None
+    height: "20dp"
+    font_size: "10sp"
+    font_style: "Subtitle1"
+    color: "#008080"
+    text_size: self.size
+    valign: "center"
+    bold: True
+     
+
+<LibraryItemAddDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "250dp"
+    padding: "5dp"
+	
+	MDScrollView:
+	    MDGridLayout:
+	        cols: 1
+	        spacing: 10
+	        adaptive_height: True
+	        
+	        LineEdit:
+	            id: item_name
+	            hint_text: "Item Name *"
+	            max_text_length: 40
+	            multiline: True
+	            required: True
+	        
+	        Spinner:
+                id: item_collection
+                text: "Select Collection"
+                color: "#008080"
+                height: "45dp"
+                background_color: (255, 255, 255, 1)
+      
+	        Spinner:
+                id: item_type
+                text: "Select Type"
+                color: "#008080"
+                height: "45dp"
+                background_color: (255, 255, 255, 1)
+            
+	        Spinner:
+                id: item_class
+                text: "Select Class"
+                color: "#008080"
+                height: "45dp"
+                background_color: (255, 255, 255, 1)
+	       
+	       
+<LibraryItemEditDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "350dp"
+    padding: "5dp"
+	
+	MDScrollView:
+	    MDGridLayout:
+	        cols: 1
+	        spacing: 10
+	        adaptive_height: True
+	        
+	        LineEdit:
+	            id: item_name
+	            hint_text: "Item Name *"
+	            max_text_length: 40
+	            multiline: True
+	            required: True
+	        
+	        Spinner:
+                id: item_type
+                text: "Select Type"
+                color: "#008080"
+                height: "45dp"
+                background_color: (255, 255, 255, 1)
+            
+            Spinner:
+                id: item_coll
+                color: "#008080"
+                height: "45dp"
+                background_color: (255, 255, 255, 1)
+            
+            Spinner:
+                id: item_class
+                text: "Select Class"
+                color: "#008080"
+                height: "45dp"
+                background_color: (255, 255, 255, 1)
+            
+	        MDGridLayout:
+	            cols: 3
+	            spacing: 5
+	            height: "30dp"
+	            
+	            MDIconButton:
+	                icon: "arrow-left"
+	                size_hint: 0.2, None
+	                height: self.parent.height
+	                valign: "center"
+	                on_release: root.decrement_counter()
+	                
+	                
+	            GrdLineEdit:
+	                id: item_count
+	                hint_text: "Update Item Count"
+	                size_hint: 0.6, None
+	                height: "30dp"
+	                mode: "rectangle"
+	                
+	            MDIconButton:
+	                icon: "arrow-right"
+	                size_hint: 0.2, None
+	                height: self.parent.height
+	                valign: "center"
+	                on_release: root.increment_counter()
+	                
+	                
+<LibraryItemsScreen>:
+    collection_name: libcollection_name
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDGridLayout:
+            cols: 1
+            size_hint: 1, None
+            height: "70dp"
+            padding: "20dp", "10dp", "20dp", 0
+            
+            SectionTitle:
+                text: "Library"
+                size_hint: .50, None
+                height: "30dp"
+                
+            MDGridLayout:
+                cols: 2
+                size_hint: 1, None
+                height: "30dp"
+                pos_hint: {"top": 1}
+                
+                SectionHeader:
+                    id: libcollection_name
+                    size_hint: .70, None
+                    height: "30dp"
+                    
+                SectionCountLabel:
+                    id: libitemscount_label
+                    size_hint: .30, None
+                    height: "30dp"
+                    halign: "right"
+             
+        MDFloatLayout:
+            MDBoxLayout:
+                orientation: "vertical"
+               
+                MDScrollView:
+                    MDGridLayout:
+                        id: libitems_container
+                        cols: 1
+                        padding: "20dp"
+                        spacing: 5
+                        adaptive_height: True
+                    
+            MDFloatingActionButton:
+                icon: "plus"
+                pos_hint: {'right': .95, 'y': 0.15}
+                on_release: root.add_library_item()
+                    

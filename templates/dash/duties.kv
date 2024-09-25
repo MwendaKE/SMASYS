@@ -1,0 +1,296 @@
+#:import DutiesScreen screens.dash.duties
+
+
+<DutyEditDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "390dp"
+    padding: "2dp"
+	
+	MDScrollView:
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "10dp"
+	        padding: "2dp"
+	        adaptive_height: True
+	        
+	        LineEdit:
+	            id: t1
+	            hint_text: "Teacher On Duty - 1 *"
+	            required: True
+	            on_focus: if self.focus: root.open_teachers1_menu()
+                      
+	        LineEdit:
+	            id: t2
+	            hint_text: "Teacher On Duty - 2"
+	            on_focus: if self.focus: root.open_teachers2_menu()
+                      
+            LineEdit:
+	            id: p1
+	            hint_text: "Prefect On Duty - 1"
+	            on_focus: if self.focus: root.open_prefects1_menu()
+                    
+            LineEdit:
+	            id: p2
+	            hint_text: "Prefect On Duty - 2"
+	            on_focus: if self.focus: root.open_prefects2_menu()
+                  
+            LineEdit:
+	            id: week
+	            hint_text: "Week *"
+	            input_type: "number"
+	            required: True
+	            
+	            
+<DutyAddDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "450dp"
+    padding: "2dp"
+	
+	MDScrollView:
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "10dp"
+	        padding: "2dp"
+	        adaptive_height: True
+	        
+	        Spinner:
+                id: term_spinner
+                text: app.root.ids.duties.ids.term.text
+                color: "#008080"
+                values: ["TERM 1","TERM 2", "TERM 3"]
+                background_color: (255, 255, 255, 1)
+                
+            Spinner:
+                id: year_spinner
+                text: app.root.ids.duties.ids.year.text
+                color: "#008080"
+                values: ["2024"]
+                background_color: (255, 255, 255, 1)
+            
+            LineEdit:
+	            id: t1
+	            hint_text: "Teacher On Duty - 1 *"
+	            required: True
+	            on_focus: if self.focus: root.open_teachers1_menu()
+                      
+	        LineEdit:
+	            id: t2
+	            hint_text: "Teacher On Duty - 2"
+	            on_focus: if self.focus: root.open_teachers2_menu()
+                      
+            LineEdit:
+	            id: p1
+	            hint_text: "Prefect On Duty - 1"
+	            on_focus: if self.focus: root.open_prefects1_menu()
+                    
+            LineEdit:
+	            id: p2
+	            hint_text: "Prefect On Duty - 2"
+	            on_focus: if self.focus: root.open_prefects2_menu()
+                  
+            LineEdit:
+	            id: week
+	            hint_text: "Week *"
+	            input_type: "number"
+	            required: True
+	              
+	                                  
+<ManualDutyCheckboxListItem>:
+    IconLeftWidget:
+        
+        MDCheckbox:
+            on_active:
+                root.on_name_checked(*args, root.text)
+  
+
+<ManualDutyEditCheckboxListItem>:
+    IconLeftWidget:
+        
+        MDCheckbox:
+            on_active:
+                root.on_name_checked(*args, root.text, root.mid)
+  
+      
+<ViewAssignedDutiesDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "300dp"
+    padding: "2dp"
+	        
+    MDScrollView:
+        MDList:
+            padding: "2dp"
+            id: assigned_students_container
+            
+
+<ManualDutyEditDialogContent>:
+    id: dialog_edit_mduty
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "250dp"
+    padding: "2dp"
+	
+	MDScrollView:
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "10dp"
+	        padding: "2dp"
+	        adaptive_height: True
+	        
+	        LineEdit:
+	            id: duty
+	            hint_text: "Manual Duty Name *"
+	            multiline: True
+	            required: True
+	            
+	        LineEdit:
+	            id: assigned_students
+	            hint_text: "Assign Students"
+	            multiline: True
+	            on_focus: if self.focus: root.open_students_role_menu()
+                      
+                                                 
+<ManualDutyAddDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "180dp"
+    padding: "2dp"
+	
+	MDScrollView:
+	    MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "10dp"
+	        padding: "2dp"
+	        adaptive_height: True
+	        
+	        Spinner:
+                id: term_spinner
+                text: app.root.ids.duties.ids.term.text
+                color: "#008080"
+                values: ["TERM 1","TERM 2", "TERM 3"]
+                background_color: (255, 255, 255, 1)
+                
+            Spinner:
+                id: year_spinner
+                text: app.root.ids.duties.ids.year.text
+                color: "#008080"
+                values: ["2024"]
+                background_color: (255, 255, 255, 1)
+            
+            LineEdit:
+	            id: duty
+	            hint_text: "Manual Duty Name *"
+	            multiline: True
+	            required: True
+	            
+	                
+<DutiesScreen>:
+    term: term
+    year: year
+    
+    MDScrollView:
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: "20dp"
+            spacing: "20dp"
+            adaptive_height: True
+                
+            SectionTitle:
+                text: "Duty Roaster"
+                
+            MDGridLayout:
+                cols: 2
+                size_hint: 1, None
+                height: "40dp"
+                
+                Spinner:
+                    id: term
+                    text: "TERM 1"
+                    color: "#FFA500"
+                    values: ["TERM 1", "TERM 2", "TERM 3"]
+                    background_color: (255, 255, 255, 1)
+                    size_hint: 0.5, None
+                    height: self.parent.height
+                    on_text: root.on_pre_enter()
+             
+                Spinner:
+                    id: year
+                    text: "2024"
+                    color: "#FFA500"
+                    values: ["2024"]
+                    background_color: (255, 255, 255, 1)
+                    size_hint: 0.5, None
+                    height: self.parent.height
+                    
+                    
+            # TEACHERS DUTIES
+                
+            SectionHeader:
+                text: "Teachers' & Prefects'"
+                bold: True
+                    
+            MDList:
+                id: duties_container
+                    
+            MDGridLayout:
+                cols: 3
+                spacing: "10dp"
+                size_hint: 1, None
+                height: "40dp"
+                
+                NormalButton:
+                    size_hint_x: 0.4
+                    text: "Add TOD & POD"
+                    icon: "plus"
+                    on_release: root.add_tp_duty()
+                
+                NormalButton:
+                    size_hint_x: 0.4
+                    text: "Print T/P Duties" # T/P for teachers & prefects
+                    icon: "printer-outline"
+                    on_release: root.print_tp_duties()
+                
+                MDLabel:
+                    size_hint_x: 0.2
+                    
+               
+            # STUDENT'S MANUAL DUTIES
+            
+            SectionHeader:
+                text: "Students' Manual Duties"
+                bold: True
+                
+            NormalLabel:
+                id: duties_alert_label
+                height: "5dp"
+                padding: "10dp", 0, "10dp", 0
+                markup: True
+                
+            MDList:
+                id: manual_duties_container
+                
+                
+            MDGridLayout:
+                cols: 3
+                spacing: "10dp"
+                size_hint: 1, None
+                height: "40dp"
+                
+                NormalButton:
+                    size_hint_x: 0.4
+                    text: "Add Duty"
+                    icon: "plus"
+                    on_release: root.add_manual_duty()
+                
+                NormalButton:
+                    size_hint_x: 0.4
+                    text: "Print Manual Duties"
+                    icon: "printer-outline"
+                    on_release: root.print_manual_duties()
+                
+                MDLabel:
+                    size_hint_x: 0.2
+                
+         

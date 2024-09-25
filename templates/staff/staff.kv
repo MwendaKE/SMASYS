@@ -1,0 +1,126 @@
+#:import StaffScreen screens.staff.staff
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+
+<ViewStaffDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "420dp"
+	        
+    MDScrollView:
+        MDBoxLayout:
+	        orientation: "vertical"
+	        spacing: "15dp"
+	        padding: "5dp"
+	        adaptive_height: True
+     
+	        LineEdit:
+	            id: staffid
+	            hint_text: "Staff Id"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: fname
+	            hint_text: "Full Name"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: gender
+	            hint_text: "Gender"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: ethnicity
+	            hint_text: "Ethnicity"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: loe
+	            hint_text: "Education Level"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: class_type
+	            hint_text: "Staff Class"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: role
+	            hint_text: "Staff Role"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: phone
+	            hint_text: "Phone Number"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: subcomb
+	            hint_text: "Subject Combination"
+	            multiline: True
+	            disabled: True
+	            
+	        LineEdit:
+	            id: doe
+	            hint_text: "Day Of Employment"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: trans
+	            hint_text: "Transfered"
+	            disabled: True
+	            
+	        LineEdit:
+	            id: trans_date
+	            hint_text: "Transfered Date"
+	            disabled: True
+	            
+	        
+	                 
+<StaffScreen>:
+    type_spinner: type_spinner
+    staff_count: staff_count_label
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        
+        MDGridLayout:
+            cols: 3
+            size_hint: 1, None
+            height: "30dp"
+            padding: "20dp", "10dp", "20dp", 0
+            
+            SectionTitle:
+                text: "Staff"
+                size_hint: .30, None
+                height: "30dp"
+                
+            Spinner:
+                id: type_spinner
+                text: "ALL"
+                color: "#008080"
+                size_hint_x: 0.55
+                background_color: (255, 255, 255, 1)
+                values: ["ALL","ADMINS","SNR SCHOOL TEACHERS","JNR SCHOOL TEACHERS","RECEPTIONISTS","OTHERS"]
+                on_text: root.update_staff_type()
+                
+            SectionCountLabel:
+                text: "0"
+                id: staff_count_label
+                size_hint: 0.15, None
+                height: "30dp"
+                halign: "center"
+        
+        MDFloatLayout:
+            MDBoxLayout:
+                orientation: "vertical"
+                size_hint: 1, 0.95
+                id: staff_container
+                pos_hint: {"top": 1}
+           
+            MDFloatingActionButton:
+                icon: "plus"
+                pos_hint: {'right': .95, 'y': 0.15}
+                on_release: root.add_new_staff()
+                       

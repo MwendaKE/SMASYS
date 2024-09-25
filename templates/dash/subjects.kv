@@ -1,0 +1,906 @@
+#:import SubjectsScreen screens.dash.subjects
+
+
+<SubjectsScreen>:
+    MDScrollView:
+        MDBoxLayout:
+            orientation: "vertical"
+            adaptive_height: True
+            
+            SectionTitle:
+                text: "Subject Allocation"
+                padding: "20dp"
+                height: "40dp"
+              
+            MDBoxLayout:
+                orientation: "vertical"
+                padding: "20dp", "20dp", "20dp", "80dp"
+                adaptive_height: True
+                spacing: 20
+                
+                # MATHS
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: mat_code
+                        text: "121"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "MATHEMATICS"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_mat_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_mat_f1_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_mat_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_mat_f2_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_mat_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_mat_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_mat_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_mat_f4_teachers_menu()
+                        
+                # ENGLISH
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: eng_code
+                        text: "101"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "ENGLISH"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_eng_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_eng_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_eng_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_eng_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_eng_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_eng_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_eng_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_eng_f4_teachers_menu()
+                        
+                # KISWAHILI
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: kis_code
+                        text: "102"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "KISWAHILI"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_kis_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_kis_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_kis_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_kis_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_kis_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_kis_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_kis_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_kis_f4_teachers_menu()
+                        
+                # BIOLOGY
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: bio_code
+                        text: "231"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "BIOLOGY"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_bio_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_bio_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_bio_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_bio_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_bio_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_bio_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_bio_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_bio_f4_teachers_menu()
+                        
+                
+                # CHEMISTRY
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: che_code
+                        text: "233"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "CHEMISTRY"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_che_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_che_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_che_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_che_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_che_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_che_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_che_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_che_f4_teachers_menu()
+                        
+                # PHYSICS
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: phy_code
+                        text: "232"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "PHYSICS"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_phy_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_phy_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_phy_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_phy_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_phy_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_phy_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_phy_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_phy_f4_teachers_menu()
+                        
+                # HISTORY
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: his_code
+                        text: "311"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "HISTORY"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_his_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_his_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_his_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_his_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_his_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_his_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_his_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_his_f4_teachers_menu()
+                        
+                # CRE
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: cre_code
+                        text: "313"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "CRE"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_cre_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_cre_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_cre_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_cre_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_cre_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_cre_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_cre_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_cre_f4_teachers_menu()
+                        
+                # GEOGRAPHY
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: geo_code
+                        text: "312"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "GEOGRAPHY"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_geo_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_geo_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_geo_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_geo_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_geo_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_geo_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_geo_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_geo_f4_teachers_menu()
+                        
+                        
+                # AGRICULTURE
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: agr_code
+                        text: "443"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "AGRICULTURE"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_agr_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_agr_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_agr_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_agr_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_agr_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_agr_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_agr_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_agr_f4_teachers_menu()
+                        
+                # BUSINESS
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: bus_code
+                        text: "565"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "BUSINESS"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_bus_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_bus_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_bus_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_bus_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_bus_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_bus_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_bus_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_bus_f4_teachers_menu()
+                        
+                # COMPUTER
+                
+                MDGridLayout:
+                    cols: 2
+                    spacing: "10dp"
+                    adaptive_height: True
+                    
+                    SectionHeader:
+                        id: com_code
+                        text: "451"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        bold: True
+                        
+                    SectionHeader:
+                        text: "COMPUTER"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        bold: True
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 1"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_com_f1
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_com_f1_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 2"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_com_f2
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp"
+                        on_focus: if self.focus: root.open_com_f2_teachers_menu() 
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 3"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_com_f3
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_com_f3_teachers_menu()
+                    
+                    GrdLineEdit:
+                        hint_text: "FORM 4"
+                        size_hint: 0.3, None
+                        height: "20dp" 
+                        disabled: True
+    
+                    GrdLineEdit:
+                        id: teacher_com_f4
+                        hint_text: "Teacher"
+                        size_hint: 0.7, None
+                        height: "20dp" 
+                        on_focus: if self.focus: root.open_com_f4_teachers_menu()
+                        
+                        
+                MDGridLayout:
+                    cols: 3
+                    spacing: 5
+                    
+                    MDLabel:
+                        size_hint_x: 0.50
+                        
+                    NormalButton:
+                        icon: "arrow-left"
+                        text: "BACK"
+                        size_hint_x: 0.25
+                        on_release: root.manager.current = "home"
+                        
+                    NormalButton:
+                        icon: "content-save-outline"
+                        text: "Save"
+                        size_hint_x: 0.25
+                        on_release: root.update_subject_teachers()
+                        

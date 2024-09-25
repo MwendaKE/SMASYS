@@ -1,0 +1,225 @@
+#:kivy 1.0
+#:import ScreenManager kivy.uix.screenmanager
+
+#:include templates/styles.kv
+#:include templates/home.kv
+#:include templates/login.kv
+
+#:include templates/topdots/settings.kv
+#:include templates/topdots/stfviewer.kv
+#:include templates/topdots/about.kv
+
+#:include templates/students/students.kv
+#:include templates/students/student_add.kv
+#:include templates/students/student_edit.kv
+
+#:include templates/exams/exams.kv
+#:include templates/exams/exam_add.kv
+#:include templates/exams/exam_list_students.kv
+
+#:include templates/dash/grading.kv
+#:include templates/dash/schcalendar.kv
+#:include templates/dash/routine.kv
+#:include templates/dash/duties.kv
+#:include templates/dash/library.kv
+#:include templates/dash/libitems.kv
+#:include templates/dash/subjects.kv
+
+#:include templates/staff/staff.kv
+#:include templates/staff/staff_add.kv
+#:include templates/staff/staff_edit.kv
+
+
+MDBoxLayout: 
+    orientation: "vertical"
+    
+    MDTopAppBar:
+        size_hint: 1, 0.07
+        pos_hint: {'top': 1}
+        elevation: 2
+        
+        
+        ### TITLE BAR ###
+        
+        MDBoxLayout:
+            size_hint: None, None
+            size: self.parent.size
+            padding: 0
+                
+            MDLabel:
+                text: "S M A S Y S"
+                size_hint: 0.70, 1
+                font_name: "./assets/fonts/SecretsStencil.ttf"
+                font_size: "22sp"
+                color: "#FFFF00"
+                padding: "20dp", 0, 0, 0
+                    
+            MDIconButton:
+                id: search_btn
+                icon: "magnify"
+                size_hint: 0.15, 1
+                on_release: app.root.ids.home.open_search_dialog()
+            
+            MDIconButton:
+                id: top_dots
+                icon: "dots-vertical"
+                size_hint: 0.15, 1
+                on_release: app.root.ids.home.open_top_menu()
+            
+            
+    ScreenManager:
+        size_hint: 1, 0.75
+        padding: 0, 0, 0, "200dp"
+        id: manager
+        
+        #### HOME SCREEN #####
+         
+        HomeScreen:
+            id: home
+            name: "home"
+            manager: manager
+            
+            
+        #### SETTINGS SCREENS #####
+        
+        SettingsScreen:
+            id: settings
+            name: "settings"
+            manager: manager
+
+        STFViewerScreen:
+            id: stf
+            name: "stf"
+            manager: manager
+            
+        SmasysAboutScreen:
+            id: about
+            name: "about"
+            manager: manager
+            
+            
+        # DASH BOARD SCREENS ##
+         
+        DutiesScreen:
+            id: duties
+            name: "duties"
+            manager: manager
+            
+        LibraryScreen:
+            id: library
+            name: "library"
+            manager: manager
+            
+        LibraryItemsScreen:
+            id: libitems
+            name: "libitems"
+            manager: manager
+               
+        CalendarScreen:
+            id: calenda
+            name: "calenda"
+            manager: manager
+            
+        RoutineScreen:
+            id: routine
+            name: "routine"
+            manager: manager
+            
+        SubjectsScreen:
+            id: subjects
+            name: "subjects"
+            manager: manager
+            
+        GradingScreen:
+            id: grading
+            name: "grading"
+            manager: manager
+            
+            
+        ## STUDENT SCREENS ##
+        
+        StudentScreen:
+            id: students
+            name: "students"
+            manager: manager
+           
+        AddStudentScreen:
+            id: addstudent
+            name: "addstudent"
+            manager: manager
+            
+        EditStudentScreen:
+            id: studentedit
+            name: "studentedit"
+            manager: manager
+            
+            
+        #### EXAM SCREENS ###
+        
+        ExamScreen:
+            id: exams
+            name: "exams"
+            manager: manager
+            
+        AddExamScreen:
+            id: addexam
+            name: "addexam"
+            manager: manager
+           
+        StudentAddExamListScreen:
+            id: examlist
+            name: "examlist"
+            manager: manager 
+        
+        
+        ### STAFF SCREENS ###
+            
+        StaffScreen:
+            id: staff
+            name: "staff"
+            manager: manager
+            
+        AddStaffScreen:
+            id: addstaff
+            name: "addstaff"
+            manager: manager
+            
+        EditStaffScreen:
+            id: staffedit
+            name: "staffedit"
+            manager: manager
+       
+            
+    ### BOTTOM NAVIGATION ###
+         
+    MDBottomNavigation:
+        id: bottom_nav
+        text_color_normal: "#FFA500" 
+        text_color_active: "#FFFF00"
+        panel_color: "#008080"
+        size_hint: 1, 0.07
+        use_text: True
+        padding: 0,"200dp",0,0
+        elevation: 2
+        
+        MDBottomNavigationItem:
+            text: "HOME"
+            icon: 'home'
+            on_tab_press: root.ids.home.open_home_screen()
+         
+        MDBottomNavigationItem:
+            text: "STUDENTS"
+            icon: 'account-school'
+            on_tab_press: root.ids.home.open_students_screen()
+            
+        MDBottomNavigationItem:
+            text: "EXAMS"
+            icon: 'pencil-box'
+            on_tab_press: root.ids.home.open_exams_screen()
+            
+        MDBottomNavigationItem:
+            text: "STAFF"
+            icon: 'account-multiple'
+            on_tab_press: root.ids.home.open_staff_screen()
+            
+        

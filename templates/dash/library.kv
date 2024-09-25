@@ -1,0 +1,76 @@
+#:import LibraryScreen screens.dash.library
+#:import ScrollEffect  kivy.effects.scroll.ScrollEffect
+
+
+<LibraryCollectionAddDialogContent>:
+    orientation: "vertical"
+    size_hint: 0.9, None
+    height: "50dp"
+    padding: "5dp"
+	
+	MDBoxLayout:
+	    LineEdit:
+	        id: colname
+	        hint_text: "Collection Name *"
+	        max_text_length: 20
+	        required: True
+	        
+
+<LibraryCollectionListItem>:
+    divider_color: "#008080"
+    
+    IconLeftWidget:
+        icon: "shield-sun-outline"  
+        
+    CollectionCountLabel:
+        id: collcount_label
+        valign: "center"
+        halign: "center"
+        color: "#008080"
+        font_size: "10sp"
+        bold: True
+        
+        canvas.before:
+            Color:
+                rgba: (0, 128, 128, 0.2)
+                
+            RoundedRectangle:
+                radius: [50]
+                size: self.size
+                pos: self.pos
+                
+                
+<LibraryScreen>:
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: "10dp"
+        
+        MDGridLayout:
+            cols: 2
+            size_hint: 1, None
+            height: "30dp"
+            padding: "20dp", "10dp", "20dp", 0
+            
+            SectionTitle:
+                text: "Library"
+                size_hint: .50, None
+                height: "30dp"
+                
+            SectionCountLabel:
+                text: "0"
+                id: librarycount_label
+                size_hint: .50, None
+                height: "30dp"
+                halign: "right"
+        
+        MDFloatLayout:
+            MDScrollView:
+                MDList:
+                    id: libcollections_container
+                    pos_hint: {"top": 1}
+            
+            MDFloatingActionButton:
+                icon: "plus"
+                pos_hint: {'right': .95, 'y': 0.15}
+                on_release: root.add_library_collection()
+                    
