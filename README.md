@@ -1,6 +1,6 @@
 # SMASYS
 
-School Management System Software project purely written in Python.
+School Management System Software in Python and Kivy.
 
 It uses a NoSQL database (mongodb) that is supported by a local mongoDB server (mongod) to store and manage all the data fed into the app.
 
